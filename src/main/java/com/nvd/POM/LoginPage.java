@@ -8,73 +8,70 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
-    //1 CONST
-    // USER NAME PASSWORD
-    public static final String LOGIN_PAGE = "/users/login";
+    public static final String LOGIN_PAGE_PATH = "/users/login";
 
-    //2 STARTING with UI MAP
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
     @FindBy(id = "defaultLoginFormUsername")
-    private WebElement loginFormUserNameInputField;
+    private WebElement loginFormUsernameInputField;
     @FindBy(id = "defaultLoginFormPassword")
     private WebElement loginFormPasswordInputField;
-    @FindBy (xpath = "//span[contains(text(),'Remember me')]")
+    @FindBy(xpath = "//span[contains(text(),'Remember me')]")
     private WebElement loginFormCheckBoxLabelText;
-    @FindBy (xpath = "//input[contains(@formcontrolname,'rememberMe')]")
+    @FindBy(xpath = "//input[contains(@formcontrolname,'rememberMe')]")
     private WebElement loginFormRememberMeCheckBox;
     @FindBy(id = "sign-in-button")
     private WebElement loginFormSubmitButton;
     @FindBy(xpath = "//span[contains(text(),'Not a member')]")
     private WebElement loginFormFooterLabelText;
-    @FindBy (xpath = "//a[contains(.,'Register')]")
+    @FindBy(xpath = "//a[contains(.,'Register')]")
     private WebElement loginFormRegisterPageLink;
-    @FindBy (css = ".toast-message.ng-star-inserted")
+    @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement loginFormToastMessage;
 
 
-    //3 CONSTRUCTOR
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    //3.1. NAVIGATION
-    public void navigateToLoginPage(){
-        navigateTo(LOGIN_PAGE);
+    public void navigateToLoginPage() {
+        navigateTo(LOGIN_PAGE_PATH);
     }
 
-    //4. USER ACTIONS
-    public void provideUserName(String userName) {
-        isPresented(loginFormUserNameInputField);
-        waitAndTypeTextInField(loginFormUserNameInputField,userName);
+    public void provideUsername(String username) {
+        isPresented(loginFormUsernameInputField);
+        waitAndTypeTextInField(loginFormUsernameInputField, username);
     }
 
     public void providePassword(String password) {
-        isPresented(loginFormUserNameInputField);
-        waitAndTypeTextInField(loginFormPasswordInputField,password);
+        isPresented(loginFormUsernameInputField);
+        waitAndTypeTextInField(loginFormPasswordInputField, password);
     }
 
-    public void clickOnLoginButton(){
+    public void clickOnRememberMeCheckBox() {
+        isPresented(loginFormRememberMeCheckBox);
+        waitAndClickOnWebElement(loginFormRememberMeCheckBox);
+    }
+
+    public void clickOnSubmitButton() {
+        isPresented(loginFormSubmitButton);
         waitAndClickOnWebElement(loginFormSubmitButton);
     }
 
-    //5. Support methods getText/isShown
-    public String getLoginPageFormTitle(){
-        //Step 3  Use explicit condition to check the visibility
+    public String getLoginFormHeaderTitle() {
         wait.until(ExpectedConditions.visibilityOf(loginFormHeaderTitle));
-        //Step 4 Try to get the value of the text
         String actualTitleText = loginFormHeaderTitle.getText();
-        //Step 5 return the getted text in to a var
         return actualTitleText;
     }
 
-    public String getLoginActionMessage(){
+    public String getLoginActionMessage() {
         wait.until(ExpectedConditions.visibilityOf(loginFormToastMessage));
-        String msg = loginFormToastMessage.getText();
-        return msg;
+        String actualMessage = loginFormToastMessage.getText();
+        return actualMessage;
     }
 
-    //6.Verifications
-
+    public void verifyLoginPageURL() {
+        isURLLoaded("http://training.skillo-bg.com:4300/users/login");
+    }
 }

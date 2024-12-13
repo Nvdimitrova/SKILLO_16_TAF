@@ -32,7 +32,7 @@ public class LoginHappyPathsTest extends BaseTest {
         Assert.assertTrue(isShownNavBarLoginLink);
 
         log.info("STEP 2: The use is navigating to the login page via click on navigation bar login link");
-        homePage.clickOnNavBarLogin();
+        homePage.clickOnNavBarLoginLink();
 
         //Step 2.1. Verify the user is on login page
         log.info("STEP 2.1.: The user is successfully on the login page");
@@ -43,7 +43,7 @@ public class LoginHappyPathsTest extends BaseTest {
 
         //Step 3. Provide username
         log.info("STEP 3. Provide username");
-        loginPage.provideUserName(" ");
+        loginPage.provideUsername(" ");
 
         //Step 4. Provide password
         log.info("STEP 4. Provide password");
@@ -51,7 +51,7 @@ public class LoginHappyPathsTest extends BaseTest {
 
         //Step 5. Click on login submit button
         log.info("STEP 4. Click on loginButton");
-        loginPage.clickOnLoginButton();
+        loginPage.clickOnSubmitButton();
 
         //Step 6. Verify successful flow
         //Step 6.1. Success message
