@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage {
     public static final String HOME_PAGE_PATH = "/posts/all";
 
+    @FindBy(id = "homeIcon")
+    private WebElement headerHomeIcon;
     @FindBy(id = "nav-link-home")
     private WebElement navBarHomeLink;
     @FindBy(id = "nav-link-login")
@@ -22,15 +24,14 @@ public class HomePage extends BasePage {
     @FindBy(id = "search-bar")
     private WebElement navBarSearchInputField;
     @FindBy(xpath = "//i[contains(@class,'fas fa-sign-out-alt fa-lg')]")
-    private WebElement navBarLogOutButton;
-
+    private WebElement navBarSignOutButton;
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
     }
 
-    public void openHomePage() {
+    public void navigateToHomePage() {
         navigateTo(HOME_PAGE_PATH);
     }
 
@@ -42,26 +43,31 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navBarProfileLink);
     }
 
+    public void clickOnNavBarSignOutButton() {
+        waitAndClickOnWebElement(navBarSignOutButton);
+    }
+
     public void clickOnNavBarNewPostLink() {
         waitAndClickOnWebElement(navBarNewPostLink);
     }
 
-    public void clickOnNavBarSearchInputField() {
-        waitAndClickOnWebElement(navBarSearchInputField);
+    public void searchInNavBarSearchInputField(String text) {
+        waitAndTypeTextInField(navBarSearchInputField, text);
     }
 
-    public void clickOnNavBarLogOutButton() {
-        waitAndClickOnWebElement(navBarLogOutButton);
+    public boolean isHomeIconShown() {
+        return isElementPresent(headerHomeIcon);
     }
 
-    public boolean isNavHomeShown() {
-        return isPresented(navBarHomeLink);
+    public boolean isNavBarHomeLinkShown() {
+        return isElementPresent(navBarHomeLink);
     }
 
-    public boolean isNavLoginShown() {
-        return isPresented(navBarLoginLink);
+    public boolean isNavBarLoginLinkShown() {
+        return isElementPresent(navBarLoginLink);
     }
 
-    //6.Verifications
-
+    public boolean isNavBarSignOutButtonShown() {
+        return isElementPresent(navBarSignOutButton);
+    }
 }

@@ -20,8 +20,8 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp(@Optional("chrome") String browser, Method method) {
         String tafName = "Nikol TAF";
-
         log = LogManager.getLogger(tafName);
+
         log.info(" ==== Test case name: " + method.getName() + " ====");
 
         BrowserDriverFactory factory = new BrowserDriverFactory(browser, log);

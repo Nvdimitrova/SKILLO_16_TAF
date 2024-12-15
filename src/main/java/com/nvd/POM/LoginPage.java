@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
     public static final String LOGIN_PAGE_PATH = "/users/login";
@@ -25,10 +24,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//span[contains(text(),'Not a member')]")
     private WebElement loginFormFooterLabelText;
     @FindBy(xpath = "//a[contains(.,'Register')]")
-    private WebElement loginFormRegisterPageLink;
+    private WebElement loginFormRegisterLink;
     @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement loginFormToastMessage;
-
 
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -40,38 +38,68 @@ public class LoginPage extends BasePage {
     }
 
     public void provideUsername(String username) {
-        isPresented(loginFormUsernameInputField);
+        isElementPresent(loginFormUsernameInputField);
         waitAndTypeTextInField(loginFormUsernameInputField, username);
     }
 
     public void providePassword(String password) {
-        isPresented(loginFormUsernameInputField);
+        isElementPresent(loginFormUsernameInputField);
         waitAndTypeTextInField(loginFormPasswordInputField, password);
     }
 
+    /*
+    public void enterUserCredentials(String username, String password) {
+        waitAndTypeTextInField(loginFormUsernameInputField, username);
+        waitAndTypeTextInField(loginFormPasswordInputField, password);
+    }
+     */
+
     public void clickOnRememberMeCheckBox() {
-        isPresented(loginFormRememberMeCheckBox);
+        isElementPresent(loginFormRememberMeCheckBox);
         waitAndClickOnWebElement(loginFormRememberMeCheckBox);
     }
 
     public void clickOnSubmitButton() {
-        isPresented(loginFormSubmitButton);
+        isElementPresent(loginFormSubmitButton);
         waitAndClickOnWebElement(loginFormSubmitButton);
     }
 
-    public String getLoginFormHeaderTitle() {
-        wait.until(ExpectedConditions.visibilityOf(loginFormHeaderTitle));
-        String actualTitleText = loginFormHeaderTitle.getText();
-        return actualTitleText;
+    public void clickOnRegisterLink(){
+        isElementPresent(loginFormRegisterLink);
+        waitAndClickOnWebElement(loginFormRegisterLink);
     }
 
-    public String getLoginActionMessage() {
-        wait.until(ExpectedConditions.visibilityOf(loginFormToastMessage));
-        String actualMessage = loginFormToastMessage.getText();
-        return actualMessage;
+    public String getLoginFormHeaderTitleText() {
+        String actualLoginHeaderText = getElementText(loginFormHeaderTitle);
+        return actualLoginHeaderText;
     }
 
-    public void verifyLoginPageURL() {
-        isURLLoaded("http://training.skillo-bg.com:4300/users/login");
+    public String getCheckBoxLabelText(){
+        String actualCheckBoxLabelText = getElementText(loginFormCheckBoxLabelText);
+        return actualCheckBoxLabelText;
+    }
+
+    public String getLoginFormFooterLabelText(){
+        String actualFooterText = getElementText(loginFormFooterLabelText);
+        return actualFooterText;
+    }
+
+    public String getLoginActionMessageText() {
+        String actualMessageText = getElementText(loginFormToastMessage);
+        return actualMessageText;
+    }
+
+    public boolean isRegisterLinkShown(){
+        return isElementPresent(loginFormRegisterLink);
+    }
+
+    public String verifyLoginUsernameInputFieldPlaceholder() {
+        String actualUsernamePlaceholder = getAttributeValue(loginFormUsernameInputField, "placeholder");
+        return actualUsernamePlaceholder;
+    }
+
+    public String verifyLoginPasswordInputFieldPlaceholder() {
+        String actualPasswordPlaceholder = getAttributeValue(loginFormPasswordInputField, "placeholder");
+        return actualPasswordPlaceholder;
     }
 }

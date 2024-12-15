@@ -12,6 +12,7 @@ import java.time.Duration;
 
 public class BasePage {
     final String BASE_URL = "http://training.skillo-bg.com:4300";
+
     WebDriver driver;
     WebDriverWait wait;
     Logger log;
@@ -38,10 +39,8 @@ public class BasePage {
 
     public void navigateTo(String pageURLPath) {
         String currentURL = BASE_URL + pageURLPath;
-
         driver.get(currentURL);
         log.info("CONFIRM # The user has navigated to: " + currentURL);
-
         waitPageTobeFullyLoaded();
     }
 
@@ -55,28 +54,39 @@ public class BasePage {
         js.executeScript("return document.readyState").equals("complete");
     }
 
-    public boolean isPresented(WebElement elm) {
-        boolean isWebElmShown = false;
-        String li = locatorInfo(elm);
-
-        log.info("ACTION @ The user is verifying if the web element with locator info: " + li);
-        try {
-            wait.until(ExpectedConditions.visibilityOf(elm));
-            log.info("# SHOWN  # Web element is shown with locator info" + li);
-            isWebElmShown = true;
-        } catch (TimeoutException e) {
-            log.error("# NOT SHOWN ! # Web element is NOT shown with locator info" + li);
-            isWebElmShown = false;
-        }
-        return isWebElmShown;
+    public String getElementText(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        String elementText = element.getText();
+        return elementText;
     }
 
-    private String locatorInfo(WebElement elm) {
-        String[] rawWebElmInfo = elm.toString().split("->");
+    public String getAttributeValue(WebElement element, String attributeName) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.getAttribute(attributeName);
+    }
+
+    public boolean isElementPresent(WebElement element) {
+        boolean isWebElementPresent = false;
+        String locatorInfo = locatorInfo(element);
+
+        log.info("ACTION @ The user is verifying web element with locator info: " + locatorInfo);
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            log.info("# SHOWN # Web element is shown with locator info: " + locatorInfo);
+            isWebElementPresent = true;
+        } catch (TimeoutException e) {
+            log.error("# NOT SHOWN # Web element is NOT shown with locator info: " + locatorInfo);
+            isWebElementPresent = false;
+        }
+        return isWebElementPresent;
+    }
+
+    private String locatorInfo(WebElement element) {
+        String[] rawWebElmInfo = element.toString().split("->");
         String[] webElmInfo = rawWebElmInfo[1].split(":");
         String locatorStrategy = webElmInfo[0];
         String locatorExpression = webElmInfo[1];
-        String info = "LOCATOR STRATEGY BY: " + locatorStrategy.toUpperCase() + " LOCATOR EXPRESSION: " + locatorExpression;
+        String info = "LOCATOR STRATEGY BY:" + locatorStrategy.toUpperCase() + " LOCATOR EXPRESSION:" + locatorExpression;
         return info;
     }
 }
