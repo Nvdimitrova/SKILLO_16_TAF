@@ -23,7 +23,7 @@ public class LoginNegativePathTest extends BaseTest {
         log.info("STEP 1: Open the ISkillo Home Page as a registered user (not signed in).");
         homePage.navigateToHomePage();
 
-        log.info("STEP 1.1: Verify the Home Page loaded successfully.");
+        log.info("STEP 1.1: Verify the Home Page URL is correct.");
         boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_PATH);
         Assert.assertTrue(isHomePageLoaded);
 
@@ -40,7 +40,7 @@ public class LoginNegativePathTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 2.1: Verify the Login Page loaded successfully.");
+        log.info("STEP 2.1: Verify the Login Page URL is correct.");
         boolean isLoginPageLoaded = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
         Assert.assertTrue(isLoginPageLoaded);
 
@@ -48,23 +48,23 @@ public class LoginNegativePathTest extends BaseTest {
         String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
         Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
 
-        log.info("STEP 3: Enter valid username.");
+        log.info("STEP 3: Enter a valid username.");
         loginPage.provideUsername(VALID_USERNAME);
 
-        log.info("STEP 4: Enter INVALID password.");
+        log.info("STEP 4: Enter an INVALID password.");
         loginPage.providePassword(WRONG_PASSWORD);
 
-        log.info("STEP 5: Click on 'Remember me' checkbox.");
+        log.info("STEP 5: Select the 'Remember me' checkbox.");
         loginPage.clickOnRememberMeCheckBox();
 
         log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
         loginPage.clickOnSubmitButton();
 
-        log.info("STEP 7: Verify ERROR sign in message.");
+        log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();
         Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE);
 
-        log.info("STEP 11: Verify that the user remains on the Login Page after unsuccessful sign in.");
+        log.info("STEP 8: Verify that the user remains on the Login Page after unsuccessful sign in.");
         boolean isUserStillOnLoginPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
         Assert.assertTrue(isUserStillOnLoginPage);
     }
@@ -75,7 +75,7 @@ public class LoginNegativePathTest extends BaseTest {
         log.info("STEP 1: Open the ISkillo Home Page as a registered user (not signed in).");
         homePage.navigateToHomePage();
 
-        log.info("STEP 1.1: Verify the Home Page loaded successfully.");
+        log.info("STEP 1.1: Verify the Home Page URL is correct.");
         boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_PATH);
         Assert.assertTrue(isHomePageLoaded);
 
@@ -92,7 +92,7 @@ public class LoginNegativePathTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 2.1: Verify the Login Page loaded successfully.");
+        log.info("STEP 2.1: Verify the Login Page URL is correct.");
         boolean isLoginPageLoaded = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
         Assert.assertTrue(isLoginPageLoaded);
 
@@ -100,23 +100,23 @@ public class LoginNegativePathTest extends BaseTest {
         String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
         Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
 
-        log.info("STEP 3: Enter INVALID username.");
+        log.info("STEP 3: Enter an INVALID username.");
         loginPage.provideUsername(WRONG_USERNAME);
 
-        log.info("STEP 4: Enter valid password.");
+        log.info("STEP 4: Enter a valid password.");
         loginPage.providePassword(VALID_PASSWORD);
 
-        log.info("STEP 5: Click on 'Remember me' checkbox.");
+        log.info("STEP 5: Select the 'Remember me' checkbox.");
         loginPage.clickOnRememberMeCheckBox();
 
         log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
         loginPage.clickOnSubmitButton();
 
-        log.info("STEP 7: Verify ERROR Sign in message.");
+        log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();
         Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE);
 
-        log.info("STEP 11: Verify that the user remains on the Login Page after unsuccessful Sign in.");
+        log.info("STEP 8: Verify that the user remains on the Login Page after unsuccessful Sign in.");
         boolean isUserStillOnLoginPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
         Assert.assertTrue(isUserStillOnLoginPage);
     }

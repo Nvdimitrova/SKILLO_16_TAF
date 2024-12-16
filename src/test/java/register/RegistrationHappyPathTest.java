@@ -18,7 +18,6 @@ public class RegistrationHappyPathTest extends BaseTest {
     private static final String USERNAME = RegistrationDataGenerator.createUsername();
     private static final String EMAIL = RegistrationDataGenerator.createEmail();
     private static final String PASSWORD = RegistrationDataGenerator.createPassword();
-    private static final String BIRTHDATE = "01072000";
 
     @Test
     public void verifySuccessfulRegistrationWithValidCredentials() {
@@ -70,21 +69,16 @@ public class RegistrationHappyPathTest extends BaseTest {
         log.info("STEP 5: Enter a valid email.");
         registrationPage.provideEmail(EMAIL);
 
-        log.info("STEP 6: Enter a valid birthdate.");
-        registrationPage.provideBirthDate(BIRTHDATE);
-
         log.info("STEP 7: Enter a valid password and confirm it.");
         registrationPage.providePassword(PASSWORD);
         registrationPage.confirmTheProvidedPassword(PASSWORD);
 
-        log.info("STEP 8: Enter public information.");
-        registrationPage.providePublicInfo("Testing registration with valid credentials");
-
         log.info("STEP 9: Submit the Registration form.");
         registrationPage.clickOnSubmitButton();
+        //naming regformsubmitbutton
 
         log.info("STEP 10: Verify successful registration message.");
-        String actualRegisterActionMessage = registrationPage.getRegistrationActionMessageText();
+        String actualRegisterActionMessage = registrationPage.getActionMessageText();
         Assert.assertEquals(actualRegisterActionMessage, SUCCESSFUL_REGISTRATION_MESSAGE);
 
         log.info("STEP 11: Verify that the user is redirected to Home Page after registration.");

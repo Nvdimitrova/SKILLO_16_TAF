@@ -24,8 +24,4 @@ public class RegistrationDataGenerator {
                 + (char) ('0' + new Random().nextInt(10))
                 + "@abv.bg";
     }
-
-    public static String createPasswordFor() {
-        return new SimpleDateFormat("mmssSSS").format(new Date()) + "_user";
-    }
 }

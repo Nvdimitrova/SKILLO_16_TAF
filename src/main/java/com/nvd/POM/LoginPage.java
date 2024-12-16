@@ -12,21 +12,21 @@ public class LoginPage extends BasePage {
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
     @FindBy(id = "defaultLoginFormUsername")
-    private WebElement loginFormUsernameInputField;
+    private WebElement usernameInputField;
     @FindBy(id = "defaultLoginFormPassword")
-    private WebElement loginFormPasswordInputField;
+    private WebElement passwordInputField;
     @FindBy(xpath = "//span[contains(text(),'Remember me')]")
-    private WebElement loginFormCheckBoxLabelText;
+    private WebElement checkBoxLabelText;
     @FindBy(xpath = "//input[contains(@formcontrolname,'rememberMe')]")
-    private WebElement loginFormRememberMeCheckBox;
+    private WebElement rememberMeCheckBox;
     @FindBy(id = "sign-in-button")
-    private WebElement loginFormSubmitButton;
+    private WebElement submitButton;
     @FindBy(xpath = "//span[contains(text(),'Not a member')]")
     private WebElement loginFormFooterLabelText;
     @FindBy(xpath = "//a[contains(.,'Register')]")
-    private WebElement loginFormRegisterLink;
+    private WebElement registerLink;
     @FindBy(css = ".toast-message.ng-star-inserted")
-    private WebElement loginFormToastMessage;
+    private WebElement toastMessage;
 
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -38,35 +38,35 @@ public class LoginPage extends BasePage {
     }
 
     public void provideUsername(String username) {
-        isElementPresent(loginFormUsernameInputField);
-        waitAndTypeTextInField(loginFormUsernameInputField, username);
+        waitAndTypeTextInField(usernameInputField, username);
     }
 
     public void providePassword(String password) {
-        isElementPresent(loginFormUsernameInputField);
-        waitAndTypeTextInField(loginFormPasswordInputField, password);
+        waitAndTypeTextInField(passwordInputField, password);
     }
 
-    /*
+
     public void enterUserCredentials(String username, String password) {
-        waitAndTypeTextInField(loginFormUsernameInputField, username);
-        waitAndTypeTextInField(loginFormPasswordInputField, password);
+        waitAndTypeTextInField(usernameInputField, username);
+        waitAndTypeTextInField(passwordInputField, password);
     }
-     */
+
+    public void loginWithUser(String username, String password) {
+        waitAndTypeTextInField(usernameInputField, username);
+        waitAndTypeTextInField(passwordInputField, password);
+        clickOnSubmitButton();
+    }
 
     public void clickOnRememberMeCheckBox() {
-        isElementPresent(loginFormRememberMeCheckBox);
-        waitAndClickOnWebElement(loginFormRememberMeCheckBox);
+        waitAndClickOnWebElement(rememberMeCheckBox);
     }
 
     public void clickOnSubmitButton() {
-        isElementPresent(loginFormSubmitButton);
-        waitAndClickOnWebElement(loginFormSubmitButton);
+        waitAndClickOnWebElement(submitButton);
     }
 
     public void clickOnRegisterLink(){
-        isElementPresent(loginFormRegisterLink);
-        waitAndClickOnWebElement(loginFormRegisterLink);
+        waitAndClickOnWebElement(registerLink);
     }
 
     public String getLoginFormHeaderTitleText() {
@@ -75,7 +75,7 @@ public class LoginPage extends BasePage {
     }
 
     public String getCheckBoxLabelText(){
-        String actualCheckBoxLabelText = getElementText(loginFormCheckBoxLabelText);
+        String actualCheckBoxLabelText = getElementText(checkBoxLabelText);
         return actualCheckBoxLabelText;
     }
 
@@ -85,21 +85,21 @@ public class LoginPage extends BasePage {
     }
 
     public String getLoginActionMessageText() {
-        String actualMessageText = getElementText(loginFormToastMessage);
+        String actualMessageText = getElementText(toastMessage);
         return actualMessageText;
     }
 
     public boolean isRegisterLinkShown(){
-        return isElementPresent(loginFormRegisterLink);
+        return isElementPresent(registerLink);
     }
 
-    public String verifyLoginUsernameInputFieldPlaceholder() {
-        String actualUsernamePlaceholder = getAttributeValue(loginFormUsernameInputField, "placeholder");
+    public String verifyUsernameInputFieldPlaceholder() {
+        String actualUsernamePlaceholder = getAttributeValue(usernameInputField, "placeholder");
         return actualUsernamePlaceholder;
     }
 
-    public String verifyLoginPasswordInputFieldPlaceholder() {
-        String actualPasswordPlaceholder = getAttributeValue(loginFormPasswordInputField, "placeholder");
+    public String verifyPasswordInputFieldPlaceholder() {
+        String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
         return actualPasswordPlaceholder;
     }
 }

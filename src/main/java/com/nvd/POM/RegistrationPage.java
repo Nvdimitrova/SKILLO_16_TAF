@@ -12,23 +12,19 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//h4[contains(text(),'Sign up')]")
     private WebElement registrationFormHeaderTitle;
     @FindBy(xpath = "//input[contains(@placeholder,'Username')]")
-    private WebElement registrationFormUsernameInputField;
+    private WebElement usernameInputField;
     @FindBy(xpath = "//input[contains(@placeholder,'email')]")
-    private WebElement registrationFormEmailInputField;
-    @FindBy(xpath = "//input[contains(@placeholder,'Birth date')]")
-    private WebElement registrationFormBirthDateInputField;
+    private WebElement emailInputField;
     @FindBy(id = "defaultRegisterFormPassword")
-    private WebElement registrationFormPasswordInputField;
+    private WebElement passwordInputField;
     @FindBy(id = "defaultRegisterPhonePassword")
-    private WebElement registrationFormConfirmPasswordInputField;
-    @FindBy(xpath = "//textarea[contains(@placeholder,'Public info')]")
-    private WebElement registrationFormPublicInfoField;
+    private WebElement confirmPasswordInputField;
     @FindBy(css = "span.invalid-feedback")
-    private WebElement registrationFormInvalidFeedbackMessage;
+    private WebElement invalidFeedbackMessage;
     @FindBy(id = "sign-in-button")
-    private WebElement registrationFormSubmitButton;
+    private WebElement submitButton;
     @FindBy(css = ".toast-message.ng-star-inserted")
-    private WebElement registrationFormToastMessage;
+    private WebElement toastMessage;
 
 
     public RegistrationPage(WebDriver driver, Logger log) {
@@ -41,49 +37,30 @@ public class RegistrationPage extends BasePage {
     }
 
     public void provideUsername(String username) {
-        isElementPresent(registrationFormUsernameInputField);
-        waitAndTypeTextInField(registrationFormUsernameInputField, username);
+        waitAndTypeTextInField(usernameInputField, username);
     }
 
     public void provideEmail(String email) {
-        isElementPresent(registrationFormEmailInputField);
-        waitAndTypeTextInField(registrationFormEmailInputField, email);
-    }
-
-    public void provideBirthDate(String birthDate) {
-        isElementPresent(registrationFormBirthDateInputField);
-        waitAndTypeTextInField(registrationFormBirthDateInputField, birthDate);
+        waitAndTypeTextInField(emailInputField, email);
     }
 
     public void providePassword(String password) {
-        isElementPresent(registrationFormPasswordInputField);
-        waitAndTypeTextInField(registrationFormPasswordInputField, password);
+        waitAndTypeTextInField(passwordInputField, password);
     }
 
     public void confirmTheProvidedPassword(String password) {
-        isElementPresent(registrationFormConfirmPasswordInputField);
-        waitAndTypeTextInField(registrationFormConfirmPasswordInputField, password);
+        waitAndTypeTextInField(confirmPasswordInputField, password);
     }
 
-    public void providePublicInfo(String publicInfo) {
-        isElementPresent(registrationFormPublicInfoField);
-        waitAndTypeTextInField(registrationFormPublicInfoField, publicInfo);
+    public void provideUserCredentials(String username, String email, String password) {
+        waitAndTypeTextInField(usernameInputField, username);
+        waitAndTypeTextInField(emailInputField, email);
+        waitAndTypeTextInField(passwordInputField, password);
+        waitAndTypeTextInField(confirmPasswordInputField, password);
     }
-
-    /*
-    public void enterUserCredentials(String username, String email, String birthDate, String password, String publicInfo) {
-        waitAndTypeTextInField(registrationFormUsernameInputField, username);
-        waitAndTypeTextInField(registrationFormEmailInputField, email);
-        waitAndTypeTextInField(registrationFormBirthDateInputField, birthDate);
-        waitAndTypeTextInField(registrationFormPasswordInputField, password);
-        waitAndTypeTextInField(registrationFormConfirmPasswordInputField, password);
-        waitAndTypeTextInField(registrationFormPublicInfoField, publicInfo);
-    }
-     */
 
     public void clickOnSubmitButton() {
-        isElementPresent(registrationFormSubmitButton);
-        waitAndClickOnWebElement(registrationFormSubmitButton);
+        waitAndClickOnWebElement(submitButton);
     }
 
     public String getRegistrationFormHeaderTitleText() {
@@ -92,42 +69,32 @@ public class RegistrationPage extends BasePage {
     }
 
     public String getInvalidFeedbackMessageText() {
-        String actualFeedbackMessageText = getElementText(registrationFormInvalidFeedbackMessage);
+        String actualFeedbackMessageText = getElementText(invalidFeedbackMessage);
         return actualFeedbackMessageText;
     }
 
-    public String getRegistrationActionMessageText() {
-        String actualMessageText = getElementText(registrationFormToastMessage);
+    public String getActionMessageText() {
+        String actualMessageText = getElementText(toastMessage);
         return actualMessageText;
     }
 
-    public String verifyRegistrationUsernameInputFieldPlaceholder() {
-        String actualUsernamePlaceholder = getAttributeValue(registrationFormUsernameInputField, "placeholder");
+    public String verifyUsernameInputFieldPlaceholder() {
+        String actualUsernamePlaceholder = getAttributeValue(usernameInputField, "placeholder");
         return actualUsernamePlaceholder;
     }
 
-    public String verifyRegistrationEmailInputFieldPlaceholder() {
-        String actualEmailPlaceholder = getAttributeValue(registrationFormEmailInputField, "placeholder");
+    public String verifyEmailInputFieldPlaceholder() {
+        String actualEmailPlaceholder = getAttributeValue(emailInputField, "placeholder");
         return actualEmailPlaceholder;
     }
 
-    public String verifyBirthdateInputFieldPlaceholder() {
-        String actualBirthdatePlaceholder = getAttributeValue(registrationFormBirthDateInputField, "placeholder");
-        return actualBirthdatePlaceholder;
-    }
-
-    public String verifyRegistrationPasswordInputFieldPlaceholder() {
-        String actualPasswordPlaceholder = getAttributeValue(registrationFormPasswordInputField, "placeholder");
+    public String verifyPasswordInputFieldPlaceholder() {
+        String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
         return actualPasswordPlaceholder;
     }
 
-    public String verifyRegistrationConfirmPasswordInputFieldPlaceholder() {
-        String actualConfirmPasswordPlaceholder = getAttributeValue(registrationFormConfirmPasswordInputField, "placeholder");
+    public String verifyConfirmPasswordInputFieldPlaceholder() {
+        String actualConfirmPasswordPlaceholder = getAttributeValue(confirmPasswordInputField, "placeholder");
         return actualConfirmPasswordPlaceholder;
-    }
-
-    public String verifyRegistrationPublicInfoInputFieldPlaceholder() {
-        String actualPublicInfoPlaceholder = getAttributeValue(registrationFormPublicInfoField, "placeholder");
-        return actualPublicInfoPlaceholder;
     }
 }
