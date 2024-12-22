@@ -26,12 +26,12 @@ public class LoginHappyPathTest extends BaseTest {
         boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_PATH);
         Assert.assertTrue(isHomePageLoaded);
 
-        //not so important check
+        //not so important check!!!!
         log.info("STEP 1.2: Verify that the Home Page icon is visible.");
         boolean isHomePageIconVisible = homePage.isHomeIconShown();
         Assert.assertTrue(isHomePageIconVisible);
 
-        log.info("STEP 1.3: Verify the Login link in the navigation bar is visible.");
+        log.info("STEP 1.2: Verify the Login link in the navigation bar is visible.");
         boolean isLoginLinkVisible = homePage.isNavBarLoginLinkShown();
         Assert.assertTrue(isLoginLinkVisible);
 
@@ -48,28 +48,43 @@ public class LoginHappyPathTest extends BaseTest {
         String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
         Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
 
-        //verify login submit button is visible before providing credentials
+        log.info("STEP 3. Verify the login submit button is visible.");
+        boolean isLoginSubmitButtonShown = loginPage.isLoginSubmitButtonShown();
+        Assert.assertTrue(isLoginSubmitButtonShown);
 
-        log.info("STEP 3: Enter a valid username.");
+        log.info("STEP 4: Enter a valid username.");
         loginPage.provideUsername(REGISTERED_USER_USERNAME);
 
-        log.info("STEP 4: Enter a valid password.");
+        log.info("STEP 5: Enter a valid password.");
         loginPage.providePassword(REGISTERED_USER_PASSWORD);
 
-        log.info("STEP 5: Select the 'Remember me' checkbox.");
+        log.info("STEP 6: Select the 'Remember me' checkbox.");
         loginPage.clickOnRememberMeCheckBox();
 
-        log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
+        log.info("STEP 7: Click the 'Submit' button to attempt signing in.");
         loginPage.clickOnSignInButton();
 
-        log.info("STEP 7: Verify successful Sign in message is displayed.");
+        log.info("STEP 8: Verify successful Sign in message is displayed.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();
         Assert.assertEquals(actualLoginActionMessage, SUCCESSFUL_LOGIN_MESSAGE);
 
-        log.info("STEP 8: Verify the user is redirected to the Home Page after signing in.");
+        log.info("STEP 9: Verify the user is redirected to the Home Page after signing in.");
         boolean isUserRedirectedToHomePage = homePage.isURLLoaded(HOME_PAGE_PATH);
         Assert.assertTrue(isUserRedirectedToHomePage);
 
-        //log-out button + profile//new post
+        log.info("STEP 10: Verify Profile link is visible.");
+        boolean isProfileLinkVisible = homePage.isNavBarProfileLinkShown();
+        Assert.assertTrue(isProfileLinkVisible);
+
+        log.info("STEP 11: Verify sign out button is visible.");
+        boolean isLogOutButtonVisible = homePage.isNavBarSignOutButtonShown();
+        Assert.assertTrue(isLogOutButtonVisible);
+
+        log.info("STEP 12: Click on the sign out button.");
+        homePage.clickOnNavBarSignOutButton();
+
+        log.info("STEP 13: Verify Profile link is not visible");
+        boolean isProfileLinkShown = homePage.isNavBarProfileLinkShown();
+        Assert.assertFalse(isProfileLinkShown);
     }
 }

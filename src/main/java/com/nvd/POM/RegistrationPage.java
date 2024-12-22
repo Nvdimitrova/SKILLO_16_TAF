@@ -26,7 +26,7 @@ public class RegistrationPage extends BasePage {
     @FindBy(css = "span.invalid-feedback")
     private WebElement invalidFeedbackMessage;
     @FindBy(id = "sign-in-button")
-    private WebElement submitButton;
+    private WebElement registrationSubmitButton;
     @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement toastMessage;
 
@@ -74,7 +74,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void clickOnSubmitButton() {
-        waitAndClickOnWebElement(submitButton);
+        waitAndClickOnWebElement(registrationSubmitButton);
     }
 
     public String getRegistrationFormHeaderTitleText() {

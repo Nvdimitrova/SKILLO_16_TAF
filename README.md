@@ -11,7 +11,8 @@
 
 ### Table of Contents
 - [Overview](#overview)
-- [Application / software under test](#application-software-under-test)
+- [Application / software under test](#application--software-under-test)
+- [Test activities performed](#test-activities-performed-with-selenium-425-and-testng-10-java-unit-framework)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Bug report](#bug-report)
@@ -33,36 +34,34 @@ automation activities, making it an invaluable resource for software testing and
 - [Click here to visit the platform](http://training.skillo-bg.com:4300/posts/all)
 
 ### Test Activities Performed with Selenium 4.25 and TestNG 10 (Java Unit Framework):
-#### Test cases overview:
+**Registration Feature**
+- Verify that a user can register in the system with valid data.
+- Verify that a user cannot register in the system with a *taken* email.
+- Verify that a user cannot register in the system with a *taken* username.
 
-- **Registration Feature**
-    - Verify that a user can register in the system with valid data.
-    - Verify that a user cannot register in the system with a *taken* email.
-    - Verify that a user cannot register in the system with a *taken* username.
+**Login Feature**
+- Verify that an already registered user can successfully log in to the system with valid credentials.
+- Verify that an already registered user cannot log in to the system with an *incorrect* username.
+- Verify that an already registered user cannot log in to the system with an *incorrect* password.
+- Verify that an already registered user cannot log in to the system without providing any credentials.
 
-- **Login Feature**
-    - Verify that an already registered user can successfully log in to the system with valid credentials.
-    - Verify that an already registered user cannot log in to the system with an *incorrect* username.
-    - Verify that an already registered user cannot log in to the system with an *incorrect* password.
-    - Verify that an already registered user cannot log in to the system without providing any credentials.
+**Post Feature**
+- Verify that a user can create a new post.
+- Verify that a user can like and dislike a post.
+- Verify that a user can delete a post.
 
-- **Post Feature**
-    - Verify that a user can create a new post.
-    - Verify that a user can like and dislike a post.
-    - Verify that a user can delete a post.
+**Profile Feature**
+- Verify that a user can upload a profile picture.
 
-- **Profile Feature**
-    - Verify that a user can upload a profile picture.
-
-- **End-to-End Scenario**
-    - Verify the full flow of user interaction: Registration → Login → Profile → Post.
+**End-to-End Scenario**
+- Verify the full flow of user interaction: Registration → Login → Profile → Post.
 
 ### Installation
 - **Prerequisites**: 
-    - Make sure you have JAVA version 23 and up. 
-    - Make sure you have Maven version 3.8.1 and up.
-    - Make sure you have Testng version 7.10.2 and up.
-    - Make sure you have Selenium version 4.25.0 and up.
+    - **JAVA:** Version 23 and up.
+    - **Maven:** Version 3.8.1 and up.
+    - **TestNG:** Version 7.10.2 and up.
+    - **Selenium:** Version 4.25.0 and up.
 
 To get started, please visit the Test Automation Framework repository at: [SKILLO_AT_16_TAF](https://github.com/)
 
@@ -97,7 +96,7 @@ For Windows OS users, please follow these steps to verify the necessary folders:
   - `screenshots`
   - `uploads`
 
-*If any of these folders are missing, they will be automatically created when you build the project within the 
+*If any of these folders are missing, they **will be automatically created** when you build the project within the 
 `src/test/java/gui` directory using the automation script.*
 
 #### Running Automation
@@ -113,10 +112,11 @@ mvn clean repository
 ```
 
 **Step 3:**
-Wait a bit the automation to start and after the test execution a report will be generated.
+Wait a bit for the tests to execute. A detailed report will be generated post-execution.
 
 ### Bug report
-If you encounter any bugs that you'd like to report, please provide the following details:
+If you encounter any bugs that you'd like to report, please provide the following details, through the designated 
+channel or email:
 
 - **Description**: A clear summary of the issue.
 - **Steps to Reproduce**: A list of actions to replicate the problem.

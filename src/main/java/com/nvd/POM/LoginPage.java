@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[contains(@formcontrolname,'rememberMe')]")
     private WebElement rememberMeCheckBox;
     @FindBy(id = "sign-in-button")
-    private WebElement signInButton;
+    private WebElement loginSubmitButton;
     @FindBy(xpath = "//span[contains(text(),'Not a member')]")
     private WebElement loginFormFooterLabelText;
     @FindBy(xpath = "//a[contains(.,'Register')]")
@@ -62,7 +62,7 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnSignInButton() {
-        waitAndClickOnWebElement(signInButton);
+        waitAndClickOnWebElement(loginSubmitButton);
     }
 
     public void clickOnRegisterLink(){
@@ -87,6 +87,10 @@ public class LoginPage extends BasePage {
     public String getLoginActionMessageText() {
         String actualMessageText = getElementText(toastMessage);
         return actualMessageText;
+    }
+
+    public boolean isLoginSubmitButtonShown(){
+        return isElementPresent(loginSubmitButton);
     }
 
     public boolean isRegisterLinkShown(){
