@@ -22,7 +22,6 @@ public class BrowserDriverFactory {
 
     public WebDriver createDriver() {
         log.info("Create driver: " + browser);
-
         switch (browser) {
             case "chrome":
                 driver.set(new ChromeDriver(configChromeOptions()));

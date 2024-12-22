@@ -8,8 +8,11 @@ import org.testng.annotations.Test;
 public class RegistrationPageLayoutTest extends BaseTest {
     private static final String USERNAME_INPUT_FIELD_PLACEHOLDER = "Username";
     private static final String EMAIL_INPUT_FIELD_PLACEHOLDER = "email";
+    private static final String BIRTHDATE_INPUT_FIELD_PLACEHOLDER = "Birth date";
+    //but visible is mm/dd/yyyy
     private static final String PASSWORD_INPUT_FIELD_PLACEHOLDER = "Password";
     private static final String CONFIRM_PASSWORD_INPUT_FIELD_PLACEHOLDER = "Confirm Password";
+    private static final String PUBLIC_INFO_INPUT_FIELD_PLACEHOLDER = "Public info";
 
     @Test
     public void verifyRegistrationPagePlaceHolders() {
@@ -26,6 +29,10 @@ public class RegistrationPageLayoutTest extends BaseTest {
         String actualEmailInputFieldPlaceholder = registrationPage.verifyEmailInputFieldPlaceholder();
         Assert.assertEquals(actualEmailInputFieldPlaceholder, EMAIL_INPUT_FIELD_PLACEHOLDER);
 
+        log.info("STEP 4: Verify the placeholder for birthdate input field");
+        String actualBirthDateInputFieldPlaceholder = registrationPage.verifyBirthdateInputFieldPlaceholder();
+        Assert.assertEquals(actualBirthDateInputFieldPlaceholder, BIRTHDATE_INPUT_FIELD_PLACEHOLDER);
+
         log.info("STEP 5: Verify the placeholder for password input field.");
         String actualPasswordInputFieldPlaceholder = registrationPage.verifyPasswordInputFieldPlaceholder();
         Assert.assertEquals(actualPasswordInputFieldPlaceholder, PASSWORD_INPUT_FIELD_PLACEHOLDER);
@@ -33,5 +40,9 @@ public class RegistrationPageLayoutTest extends BaseTest {
         log.info("STEP 6: Verify the placeholder for confirm password input field.");
         String actualConfirmPasswordInputFieldPlaceholder = registrationPage.verifyConfirmPasswordInputFieldPlaceholder();
         Assert.assertEquals(actualConfirmPasswordInputFieldPlaceholder, CONFIRM_PASSWORD_INPUT_FIELD_PLACEHOLDER);
+
+        log.info("STEP 7: Verify the placeholder for confirm password input field.");
+        String actualPublicInfoInputFieldPlaceholder = registrationPage.verifyPublicInfoInputFieldPlaceholder();
+        Assert.assertEquals(actualPublicInfoInputFieldPlaceholder, PUBLIC_INFO_INPUT_FIELD_PLACEHOLDER);
     }
 }

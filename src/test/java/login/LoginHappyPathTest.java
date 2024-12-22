@@ -60,7 +60,7 @@ public class LoginHappyPathTest extends BaseTest {
         loginPage.clickOnRememberMeCheckBox();
 
         log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
-        loginPage.clickOnSubmitButton();
+        loginPage.clickOnSignInButton();
 
         log.info("STEP 7: Verify successful Sign in message is displayed.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();

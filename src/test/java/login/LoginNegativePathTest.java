@@ -58,7 +58,7 @@ public class LoginNegativePathTest extends BaseTest {
         loginPage.clickOnRememberMeCheckBox();
 
         log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
-        loginPage.clickOnSubmitButton();
+        loginPage.clickOnSignInButton();
 
         log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();
@@ -110,7 +110,7 @@ public class LoginNegativePathTest extends BaseTest {
         loginPage.clickOnRememberMeCheckBox();
 
         log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
-        loginPage.clickOnSubmitButton();
+        loginPage.clickOnSignInButton();
 
         log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();

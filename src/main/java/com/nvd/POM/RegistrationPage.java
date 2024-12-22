@@ -15,10 +15,14 @@ public class RegistrationPage extends BasePage {
     private WebElement usernameInputField;
     @FindBy(xpath = "//input[contains(@placeholder,'email')]")
     private WebElement emailInputField;
+    @FindBy(xpath = "//input[contains(@placeholder,'Birth date')]")
+    private WebElement birthDateInputField;
     @FindBy(id = "defaultRegisterFormPassword")
     private WebElement passwordInputField;
     @FindBy(id = "defaultRegisterPhonePassword")
     private WebElement confirmPasswordInputField;
+    @FindBy(xpath = "//textarea[contains(@placeholder,'Public info')]")
+    private WebElement publicInfoInputField;
     @FindBy(css = "span.invalid-feedback")
     private WebElement invalidFeedbackMessage;
     @FindBy(id = "sign-in-button")
@@ -44,6 +48,10 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(emailInputField, email);
     }
 
+    public void provideBirthDate(String birthDate) {
+        waitAndTypeTextInField(birthDateInputField, birthDate);
+    }
+
     public void providePassword(String password) {
         waitAndTypeTextInField(passwordInputField, password);
     }
@@ -52,11 +60,17 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(confirmPasswordInputField, password);
     }
 
-    public void provideUserCredentials(String username, String email, String password) {
+    public void providePublicInfo(String publicInfo) {
+        waitAndTypeTextInField(publicInfoInputField, publicInfo);
+    }
+
+    public void provideUserCredentials(String username, String email, String birthDate, String password, String publicInfo) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(emailInputField, email);
+        waitAndTypeTextInField(birthDateInputField, birthDate);
         waitAndTypeTextInField(passwordInputField, password);
         waitAndTypeTextInField(confirmPasswordInputField, password);
+        waitAndTypeTextInField(publicInfoInputField, publicInfo);
     }
 
     public void clickOnSubmitButton() {
@@ -88,6 +102,11 @@ public class RegistrationPage extends BasePage {
         return actualEmailPlaceholder;
     }
 
+    public String verifyBirthdateInputFieldPlaceholder() {
+        String actualBirthdatePlaceholder = getAttributeValue(birthDateInputField, "placeholder");
+        return actualBirthdatePlaceholder;
+    }
+
     public String verifyPasswordInputFieldPlaceholder() {
         String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
         return actualPasswordPlaceholder;
@@ -96,5 +115,10 @@ public class RegistrationPage extends BasePage {
     public String verifyConfirmPasswordInputFieldPlaceholder() {
         String actualConfirmPasswordPlaceholder = getAttributeValue(confirmPasswordInputField, "placeholder");
         return actualConfirmPasswordPlaceholder;
+    }
+
+    public String verifyPublicInfoInputFieldPlaceholder() {
+        String actualPublicInfoPlaceholder = getAttributeValue(publicInfoInputField, "placeholder");
+        return actualPublicInfoPlaceholder;
     }
 }

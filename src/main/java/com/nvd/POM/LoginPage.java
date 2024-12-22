@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[contains(@formcontrolname,'rememberMe')]")
     private WebElement rememberMeCheckBox;
     @FindBy(id = "sign-in-button")
-    private WebElement submitButton;
+    private WebElement signInButton;
     @FindBy(xpath = "//span[contains(text(),'Not a member')]")
     private WebElement loginFormFooterLabelText;
     @FindBy(xpath = "//a[contains(.,'Register')]")
@@ -54,15 +54,15 @@ public class LoginPage extends BasePage {
     public void loginWithUser(String username, String password) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(passwordInputField, password);
-        clickOnSubmitButton();
+        clickOnSignInButton();
     }
 
     public void clickOnRememberMeCheckBox() {
         waitAndClickOnWebElement(rememberMeCheckBox);
     }
 
-    public void clickOnSubmitButton() {
-        waitAndClickOnWebElement(submitButton);
+    public void clickOnSignInButton() {
+        waitAndClickOnWebElement(signInButton);
     }
 
     public void clickOnRegisterLink(){

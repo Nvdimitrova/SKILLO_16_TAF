@@ -67,6 +67,18 @@ public class HomePage extends BasePage {
         return isElementPresent(navBarLoginLink);
     }
 
+    public boolean isNavBarProfileLinkShown(){
+        return isElementPresent(navBarProfileLink);
+    }
+
+    public boolean isNavBarNewPostLinkShown(){
+        return isElementPresent(navBarNewPostLink);
+    }
+
+    public boolean isNavBarSearchInputFieldShown(){
+        return isElementPresent(navBarSearchInputField);
+    }
+
     public boolean isNavBarSignOutButtonShown() {
         return isElementPresent(navBarSignOutButton);
     }

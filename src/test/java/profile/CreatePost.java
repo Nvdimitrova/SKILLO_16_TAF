@@ -17,7 +17,7 @@ public class CreatePost extends BaseTest {
         loginPage.navigateToLoginPage();
         loginPage.provideUsername("Nikol VD");
         loginPage.providePassword("EnteringMyPassword");
-        loginPage.clickOnSubmitButton();
+        loginPage.clickOnSignInButton();
 
         ProfilePage profilePage = new ProfilePage(super.driver, log);
         profilePage.clickOnNavBarNewPostLink();
