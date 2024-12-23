@@ -11,6 +11,7 @@
 
 ## Automating ISkillo website
 
+---
 
 ### Table of Contents
 - [Overview](#overview)
