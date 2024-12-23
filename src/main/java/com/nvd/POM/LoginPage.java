@@ -74,6 +74,11 @@ public class LoginPage extends BasePage {
         return actualLoginHeaderText;
     }
 
+    public String getLoginFormSubmitButtonText(){
+        String actualLoginFormSubmitButtonText = getElementText(loginSubmitButton);
+        return actualLoginFormSubmitButtonText;
+    }
+
     public String getCheckBoxLabelText(){
         String actualCheckBoxLabelText = getElementText(checkBoxLabelText);
         return actualCheckBoxLabelText;
@@ -89,12 +94,28 @@ public class LoginPage extends BasePage {
         return actualMessageText;
     }
 
+    public boolean isCheckBoxShown(){
+        return isElementPresent(rememberMeCheckBox);
+    }
+
     public boolean isLoginSubmitButtonShown(){
         return isElementPresent(loginSubmitButton);
     }
 
     public boolean isRegisterLinkShown(){
         return isElementPresent(registerLink);
+    }
+
+    public boolean isLoginSubmitButtonClickable(){
+        return isElementClickable(loginSubmitButton);
+    }
+
+    public boolean isRegisterLinkClickable(){
+        return isElementClickable(registerLink);
+    }
+
+    public boolean isCheckBoxClickable(){
+        return isElementClickable(rememberMeCheckBox);
     }
 
     public String verifyUsernameInputFieldPlaceholder() {

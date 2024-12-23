@@ -1,13 +1,17 @@
-<div style="text-align: center;">
+<p align="center">
     <img src="skilloLogo.png" alt="Skillo Academy Logo" />
-</div>
+</p>
+
 
 <div align="center">
 
 # Test automation framework
-## Automating ISkillo website
 
 </div>
+
+## Automating ISkillo website
+
+---
 
 ### Table of Contents
 - [Overview](#overview)
@@ -17,6 +21,8 @@
 - [Usage](#usage)
 - [Bug report](#bug-report)
 - [Contact](#contact)
+
+---
 
 ### Overview
 **ISkillo Social Networks** is an innovative online platform where users can create profiles, connect with friends and
@@ -29,9 +35,13 @@ interactions.
 Additionally, **ISkillo** serves as a hub for QA engineers, offering a dynamic environment for a wide range of test 
 automation activities, making it an invaluable resource for software testing and quality assurance.
 
+---
+
 ### Application / software under test:
 **ISkillo** Training Platform
 - [Click here to visit the platform](http://training.skillo-bg.com:4300/posts/all)
+
+---
 
 ### Test Activities Performed with Selenium 4.25 and TestNG 10 (Java Unit Framework):
 **Registration Feature**
@@ -55,6 +65,8 @@ automation activities, making it an invaluable resource for software testing and
 
 **End-to-End Scenario**
 - Verify the full flow of user interaction: Registration → Login → Profile → Post.
+
+---
 
 ### Installation
 - **Prerequisites**: 
@@ -84,13 +96,16 @@ Ensure that you can clone the repository by following one of the three methods o
   - Provide the Git repository URL
   - Click "Clone" to download the project into IntelliJ IDEA.
 
+---
+
 ### Usage
 #### Check Folder Paths
 
 For Windows OS users, please follow these steps to verify the necessary folders:
 
-- Navigate to the `src/test/resources` directory.
-- Ensure the following folders are present:
+**Step 1:** Navigate to the `src/test/resources` directory.
+
+**Step 2:** Ensure the following folders are present:
   - `downloads`
   - `reports`
   - `screenshots`
@@ -114,6 +129,8 @@ mvn clean repository
 **Step 3:**
 Wait a bit for the tests to execute. A detailed report will be generated post-execution.
 
+---
+
 ### Bug report
 If you encounter any bugs that you'd like to report, please provide the following details, through the designated 
 channel or email:
@@ -123,6 +140,8 @@ channel or email:
 - **Expected vs. Actual Behavior**: What was expected and what actually occurred.
 - **Environment**: Include browser, operating system, and application version.
 - **Attachments**: Any relevant screenshots, logs, or error messages.
+
+---
 
 ### Contact
 - Nikol Valentinova Dimitrova: [Skillo Student](mailto:nikolvd3@abv.bg)

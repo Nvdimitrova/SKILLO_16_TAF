@@ -81,6 +81,17 @@ public class BasePage {
         return isWebElementPresent;
     }
 
+    public boolean isElementClickable(WebElement element) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        } catch (Exception e) {
+            System.out.println("Element is not clickable: " + e.getMessage());
+            return false;
+        }
+    }
+
     private String locatorInfo(WebElement element) {
         String[] rawWebElmInfo = element.toString().split("->");
         String[] webElmInfo = rawWebElmInfo[1].split(":");
