@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends BasePage {
-    public static final String REGISTRATION_PAGE_PATH = "/users/register";
+    final String REGISTRATION_PAGE_PATH = "/users/register";
 
     @FindBy(xpath = "//h4[contains(text(),'Sign up')]")
     private WebElement registrationFormHeaderTitle;
@@ -26,7 +26,7 @@ public class RegistrationPage extends BasePage {
     @FindBy(css = "span.invalid-feedback")
     private WebElement invalidFeedbackMessage;
     @FindBy(id = "sign-in-button")
-    private WebElement registrationSubmitButton;
+    private WebElement registrationFormSubmitButton;
     @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement toastMessage;
 
@@ -64,7 +64,7 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(publicInfoInputField, publicInfo);
     }
 
-    public void provideUserCredentials(String username, String email, String birthDate, String password, String publicInfo) {
+    public void provideUserCredentials(String username, String email, String birthDate, String password,String confirmPassword, String publicInfo) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(emailInputField, email);
         waitAndTypeTextInField(birthDateInputField, birthDate);
@@ -73,8 +73,8 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(publicInfoInputField, publicInfo);
     }
 
-    public void clickOnSubmitButton() {
-        waitAndClickOnWebElement(registrationSubmitButton);
+    public void clickOnRegistrationFormSubmitButton() {
+        waitAndClickOnWebElement(registrationFormSubmitButton);
     }
 
     public String getRegistrationFormHeaderTitleText() {

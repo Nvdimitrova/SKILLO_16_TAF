@@ -23,6 +23,13 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+    public void navigateTo(String pageURLPath) {
+        String currentURL = BASE_URL + pageURLPath;
+        driver.get(currentURL);
+        log.info("CONFIRM # The user has navigated to: " + currentURL);
+        waitPageTobeFullyLoaded();
+    }
+
     public void waitAndClickOnWebElement(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -35,18 +42,6 @@ public class BasePage {
         textField.clear();
         textField.sendKeys(inputText);
         waitPageTobeFullyLoaded();
-    }
-
-    public void navigateTo(String pageURLPath) {
-        String currentURL = BASE_URL + pageURLPath;
-        driver.get(currentURL);
-        log.info("CONFIRM # The user has navigated to: " + currentURL);
-        waitPageTobeFullyLoaded();
-    }
-
-    public boolean isURLLoaded(String pageURL) {
-        waitPageTobeFullyLoaded();
-        return wait.until(ExpectedConditions.urlContains(pageURL));
     }
 
     public void waitPageTobeFullyLoaded() {
@@ -62,7 +57,13 @@ public class BasePage {
 
     public String getAttributeValue(WebElement element, String attributeName) {
         wait.until(ExpectedConditions.visibilityOf(element));
-        return element.getAttribute(attributeName);
+        String attributeValue = element.getAttribute(attributeName);
+        return attributeValue;
+    }
+
+    public boolean isURLLoaded(String pageURL) {
+        waitPageTobeFullyLoaded();
+        return wait.until(ExpectedConditions.urlContains(pageURL));
     }
 
     public boolean isElementPresent(WebElement element) {
@@ -82,14 +83,14 @@ public class BasePage {
     }
 
     public boolean isElementClickable(WebElement element) {
+        boolean isElementClickable = false;
         try {
-            wait.until(ExpectedConditions.visibilityOf(element));
             wait.until(ExpectedConditions.elementToBeClickable(element));
-            return true;
-        } catch (Exception e) {
-            System.out.println("Element is not clickable: " + e.getMessage());
-            return false;
+            isElementClickable = true;
+        } catch (TimeoutException e) {
+            isElementClickable = false;
         }
+        return isElementClickable;
     }
 
     private String locatorInfo(WebElement element) {

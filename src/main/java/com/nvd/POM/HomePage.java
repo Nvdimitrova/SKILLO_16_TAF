@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class HomePage extends BasePage {
-    public static final String HOME_PAGE_PATH = "/posts/all";
+    final String HOME_PAGE_PATH = "/posts/all";
 
     @FindBy(id = "homeIcon")
     private WebElement headerHomeIcon;
@@ -43,15 +43,15 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navBarProfileLink);
     }
 
-    public void clickOnNavBarSignOutButton() {
-        waitAndClickOnWebElement(navBarSignOutButton);
-    }
-
     public void clickOnNavBarNewPostLink() {
         waitAndClickOnWebElement(navBarNewPostLink);
     }
 
-    public void searchInNavBarSearchInputField(String text) {
+    public void clickOnNavBarSignOutButton() {
+        waitAndClickOnWebElement(navBarSignOutButton);
+    }
+
+    public void typeTextInNavBarSearchInputField(String text) {
         waitAndTypeTextInField(navBarSearchInputField, text);
     }
 
@@ -67,15 +67,15 @@ public class HomePage extends BasePage {
         return isElementPresent(navBarLoginLink);
     }
 
-    public boolean isNavBarProfileLinkShown(){
+    public boolean isNavBarProfileLinkShown() {
         return isElementPresent(navBarProfileLink);
     }
 
-    public boolean isNavBarNewPostLinkShown(){
+    public boolean isNavBarNewPostLinkShown() {
         return isElementPresent(navBarNewPostLink);
     }
 
-    public boolean isNavBarSearchInputFieldShown(){
+    public boolean isNavBarSearchInputFieldShown() {
         return isElementPresent(navBarSearchInputField);
     }
 

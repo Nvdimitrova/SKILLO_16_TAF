@@ -145,5 +145,5 @@ channel or email:
 ---
 
 ### Contact
-- Nikol Valentinova Dimitrova: [Skillo Student](mailto:nikolvd3@abv.bg)
-- Project Link: [TAF Selenium 4 TestNG 7](https://github.com/)
+- Nikol Valentinova Dimitrova: [Skillo Student Email](mailto:nikolvd3@abv.bg)
+- Project Link: [GitHub - TAF Selenium 4 TestNG 7](https://github.com/)

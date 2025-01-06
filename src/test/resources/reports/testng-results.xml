@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-05T15:36:49 EET" name="All Test Suite" finished-at="2025-01-05T15:38:41 EET" duration-ms="111752">
+    <groups>
+    </groups>
+    <test started-at="2025-01-05T15:36:49 EET" name="C:/Users/Nikol/IdeaProjects/SKILLO_AT_16_TAF" finished-at="2025-01-05T15:38:41 EET" duration-ms="111752">
+      <class name="register.RegistrationNegativePathTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:17 EET" name="setUp" finished-at="2025-01-05T15:38:19 EET" duration-ms="1837" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void register.RegistrationNegativePathTest.verifyUserCannotRegisterWithTakenUsername()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserCannotRegisterWithTakenUsername()[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:19 EET" name="verifyUserCannotRegisterWithTakenUsername" finished-at="2025-01-05T15:38:26 EET" duration-ms="7078" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCannotRegisterWithTakenUsername -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:26 EET" name="tearDown" finished-at="2025-01-05T15:38:26 EET" duration-ms="274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCannotRegisterWithTakenUsername status=SUCCESS method=RegistrationNegativePathTest.verifyUserCannotRegisterWithTakenUsername()[pri:0, instance:register.RegistrationNegativePathTest@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:26 EET" name="setUp" finished-at="2025-01-05T15:38:28 EET" duration-ms="1932" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void register.RegistrationNegativePathTest.verifyUserCannotRegisterWithTakenEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserCannotRegisterWithTakenEmail()[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:28 EET" name="verifyUserCannotRegisterWithTakenEmail" finished-at="2025-01-05T15:38:35 EET" duration-ms="6990" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCannotRegisterWithTakenEmail -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:register.RegistrationNegativePathTest@47eaca72]" started-at="2025-01-05T15:38:35 EET" name="tearDown" finished-at="2025-01-05T15:38:36 EET" duration-ms="359" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCannotRegisterWithTakenEmail status=SUCCESS method=RegistrationNegativePathTest.verifyUserCannotRegisterWithTakenEmail()[pri:0, instance:register.RegistrationNegativePathTest@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- register.RegistrationNegativePathTest -->
+      <class name="login.LoginPageLayoutTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:login.LoginPageLayoutTest@4135c3b]" started-at="2025-01-05T15:37:39 EET" name="setUp" finished-at="2025-01-05T15:37:41 EET" duration-ms="1759" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void login.LoginPageLayoutTest.verifyLoginPageLayout()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginPageLayout()[pri:0, instance:login.LoginPageLayoutTest@4135c3b]" started-at="2025-01-05T15:37:41 EET" name="verifyLoginPageLayout" finished-at="2025-01-05T15:37:50 EET" duration-ms="8992" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageLayout -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:login.LoginPageLayoutTest@4135c3b]" started-at="2025-01-05T15:37:50 EET" name="tearDown" finished-at="2025-01-05T15:37:50 EET" duration-ms="305" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginPageLayout status=SUCCESS method=LoginPageLayoutTest.verifyLoginPageLayout()[pri:0, instance:login.LoginPageLayoutTest@4135c3b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- login.LoginPageLayoutTest -->
+      <class name="register.RegistrationPageLayoutTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:register.RegistrationPageLayoutTest@55141def]" started-at="2025-01-05T15:38:36 EET" name="setUp" finished-at="2025-01-05T15:38:37 EET" duration-ms="1702" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void register.RegistrationPageLayoutTest.verifyRegistrationPagePlaceHolders()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyRegistrationPagePlaceHolders()[pri:0, instance:register.RegistrationPageLayoutTest@55141def]" started-at="2025-01-05T15:38:37 EET" name="verifyRegistrationPagePlaceHolders" finished-at="2025-01-05T15:38:40 EET" duration-ms="2957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegistrationPagePlaceHolders -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:register.RegistrationPageLayoutTest@55141def]" started-at="2025-01-05T15:38:40 EET" name="tearDown" finished-at="2025-01-05T15:38:41 EET" duration-ms="280" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyRegistrationPagePlaceHolders status=SUCCESS method=RegistrationPageLayoutTest.verifyRegistrationPagePlaceHolders()[pri:0, instance:register.RegistrationPageLayoutTest@55141def] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- register.RegistrationPageLayoutTest -->
+      <class name="login.LoginNegativePathTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:16 EET" name="setUp" finished-at="2025-01-05T15:37:18 EET" duration-ms="1878" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void login.LoginNegativePathTest.verifyUnsuccessfulLoginWithInvalidUsername()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUnsuccessfulLoginWithInvalidUsername()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:18 EET" name="verifyUnsuccessfulLoginWithInvalidUsername" finished-at="2025-01-05T15:37:21 EET" duration-ms="3396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUnsuccessfulLoginWithInvalidUsername -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:21 EET" name="tearDown" finished-at="2025-01-05T15:37:22 EET" duration-ms="323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUnsuccessfulLoginWithInvalidUsername status=SUCCESS method=LoginNegativePathTest.verifyUnsuccessfulLoginWithInvalidUsername()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:22 EET" name="setUp" finished-at="2025-01-05T15:37:24 EET" duration-ms="2003" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void login.LoginNegativePathTest.verifyUserCannotLoginWithInvalidPassword()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserCannotLoginWithInvalidPassword()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:24 EET" name="verifyUserCannotLoginWithInvalidPassword" finished-at="2025-01-05T15:37:28 EET" duration-ms="4075" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCannotLoginWithInvalidPassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:28 EET" name="tearDown" finished-at="2025-01-05T15:37:28 EET" duration-ms="299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCannotLoginWithInvalidPassword status=SUCCESS method=LoginNegativePathTest.verifyUserCannotLoginWithInvalidPassword()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:28 EET" name="setUp" finished-at="2025-01-05T15:37:30 EET" duration-ms="1896" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void login.LoginNegativePathTest.verifyUserCannotLoginWithEmptyCredentials()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserCannotLoginWithEmptyCredentials()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:30 EET" name="verifyUserCannotLoginWithEmptyCredentials" finished-at="2025-01-05T15:37:39 EET" duration-ms="8937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCannotLoginWithEmptyCredentials -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:login.LoginNegativePathTest@2a65fe7c]" started-at="2025-01-05T15:37:39 EET" name="tearDown" finished-at="2025-01-05T15:37:39 EET" duration-ms="297" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCannotLoginWithEmptyCredentials status=SUCCESS method=LoginNegativePathTest.verifyUserCannotLoginWithEmptyCredentials()[pri:0, instance:login.LoginNegativePathTest@2a65fe7c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- login.LoginNegativePathTest -->
+      <class name="e2e.VerifyUserCanRegisterLoginUpdateProfilePost">
+        <test-method is-config="true" signature="setupTestSuite()[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef]" started-at="2025-01-05T15:36:49 EET" name="setupTestSuite" finished-at="2025-01-05T15:36:49 EET" duration-ms="43" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTestSuite -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef]" started-at="2025-01-05T15:36:49 EET" name="setUp" finished-at="2025-01-05T15:36:53 EET" duration-ms="3844" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void e2e.VerifyUserCanRegisterLoginUpdateProfilePost.basicEndToEnd() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="basicEndToEnd()[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef]" started-at="2025-01-05T15:36:53 EET" name="basicEndToEnd" finished-at="2025-01-05T15:37:08 EET" duration-ms="15602" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicEndToEnd -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef]" started-at="2025-01-05T15:37:08 EET" name="tearDown" finished-at="2025-01-05T15:37:09 EET" duration-ms="341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=basicEndToEnd status=SUCCESS method=VerifyUserCanRegisterLoginUpdateProfilePost.basicEndToEnd()[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="cleanFiles()[pri:0, instance:e2e.VerifyUserCanRegisterLoginUpdateProfilePost@18078bef]" started-at="2025-01-05T15:38:41 EET" name="cleanFiles" finished-at="2025-01-05T15:38:41 EET" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanFiles -->
+      </class> <!-- e2e.VerifyUserCanRegisterLoginUpdateProfilePost -->
+      <class name="register.RegistrationHappyPathTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:register.RegistrationHappyPathTest@1aafa419]" started-at="2025-01-05T15:38:06 EET" name="setUp" finished-at="2025-01-05T15:38:08 EET" duration-ms="1740" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void register.RegistrationHappyPathTest.verifySuccessfulRegistrationWithValidCredentials()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySuccessfulRegistrationWithValidCredentials()[pri:0, instance:register.RegistrationHappyPathTest@1aafa419]" started-at="2025-01-05T15:38:08 EET" name="verifySuccessfulRegistrationWithValidCredentials" finished-at="2025-01-05T15:38:17 EET" duration-ms="9259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfulRegistrationWithValidCredentials -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:register.RegistrationHappyPathTest@1aafa419]" started-at="2025-01-05T15:38:17 EET" name="tearDown" finished-at="2025-01-05T15:38:17 EET" duration-ms="292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySuccessfulRegistrationWithValidCredentials status=SUCCESS method=RegistrationHappyPathTest.verifySuccessfulRegistrationWithValidCredentials()[pri:0, instance:register.RegistrationHappyPathTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- register.RegistrationHappyPathTest -->
+      <class name="post.PostTests">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:post.PostTests@6302bbb1]" started-at="2025-01-05T15:37:50 EET" name="setUp" finished-at="2025-01-05T15:37:52 EET" duration-ms="1693" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void post.PostTests.verifyUserCanUploadImage()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserCanUploadImage()[pri:0, instance:post.PostTests@6302bbb1]" started-at="2025-01-05T15:37:52 EET" name="verifyUserCanUploadImage" finished-at="2025-01-05T15:38:06 EET" duration-ms="13452" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCanUploadImage -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:post.PostTests@6302bbb1]" started-at="2025-01-05T15:38:06 EET" name="tearDown" finished-at="2025-01-05T15:38:06 EET" duration-ms="338" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCanUploadImage status=SUCCESS method=PostTests.verifyUserCanUploadImage()[pri:0, instance:post.PostTests@6302bbb1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- post.PostTests -->
+      <class name="login.LoginHappyPathTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:login.LoginHappyPathTest@4562e04d]" started-at="2025-01-05T15:37:09 EET" name="setUp" finished-at="2025-01-05T15:37:10 EET" duration-ms="1729" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void login.LoginHappyPathTest.verifySuccessfulLoginWithValidCredentials()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySuccessfulLoginWithValidCredentials()[pri:0, instance:login.LoginHappyPathTest@4562e04d]" started-at="2025-01-05T15:37:10 EET" name="verifySuccessfulLoginWithValidCredentials" finished-at="2025-01-05T15:37:16 EET" duration-ms="5449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfulLoginWithValidCredentials -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:login.LoginHappyPathTest@4562e04d]" started-at="2025-01-05T15:37:16 EET" name="tearDown" finished-at="2025-01-05T15:37:16 EET" duration-ms="353" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySuccessfulLoginWithValidCredentials status=SUCCESS method=LoginHappyPathTest.verifySuccessfulLoginWithValidCredentials()[pri:0, instance:login.LoginHappyPathTest@4562e04d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- login.LoginHappyPathTest -->
+    </test> <!-- C:/Users/Nikol/IdeaProjects/SKILLO_AT_16_TAF -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

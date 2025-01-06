@@ -2,20 +2,26 @@ package com.nvd.POM;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PostModal extends BasePage {
-    private final WebElement modalElement;
+    @FindBy (className = "post-modal")
+    private WebElement postModalWindow;
+    @FindBy (css = ".post-modal-img img")
+    private WebElement postModalImage;
+    @FindBy (className = "post-user")
+    private WebElement postProfileUsername;
 
     public PostModal(WebDriver driver, Logger log) {
         super(driver, log);
-        this.modalElement = driver.findElement(By.className("post-modal"));
+        PageFactory.initElements(driver, this);
     }
 
     public boolean isImageVisible() {
         try {
-            WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img img"));
-            return wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
+            return wait.until(ExpectedConditions.visibilityOf(postModalImage)).isDisplayed();
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             return false;
@@ -23,8 +29,7 @@ public class PostModal extends BasePage {
     }
 
     public String getPostUser() {
-        WebElement postUser = modalElement.findElement(By.className("post-user"));
-        wait.until(ExpectedConditions.visibilityOf(postUser));
-        return postUser.getText();
+        wait.until(ExpectedConditions.visibilityOf(postProfileUsername));
+        return postProfileUsername.getText();
     }
 }

@@ -18,6 +18,7 @@ public class RegistrationPageLayoutTest extends BaseTest {
     public void verifyRegistrationPagePlaceHolders() {
         RegistrationPage registrationPage = new RegistrationPage(super.driver, log);
 
+        //INVALID FEEDBACK
         log.info("STEP 1: Navigate to the Registration Page.");
         registrationPage.navigateToRegistrationPage();
 

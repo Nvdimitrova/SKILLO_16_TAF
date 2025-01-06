@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginNegativePathTest extends BaseTest {
-    private static final String HOME_PAGE_PATH = "/posts/all";
     private static final String LOGIN_PAGE_PATH = "/users/login";
     private static final String LOGIN_FORM_HEADER_TITLE = "Sign in";
     private static final String LOGIN_ERROR_MESSAGE = "Wrong username or password!";
@@ -15,109 +14,108 @@ public class LoginNegativePathTest extends BaseTest {
     private static final String VALID_USERNAME = "Nikol VD";
     private static final String VALID_PASSWORD = "EnteringMyPassword";
     private static final String WRONG_USERNAME = "User...Name";
-    private static final String WRONG_PASSWORD = "StupidPassword";
+    private static final String WRONG_PASSWORD = "WrongPassword";
 
-    @Test
-    public void verifyUserCannotLoginWithInvalidPassword() {
-        HomePage homePage = new HomePage(super.driver, log);
-        log.info("STEP 1: Open the ISkillo Home Page as a registered user (not signed in).");
-        homePage.navigateToHomePage();
-
-        log.info("STEP 1.1: Verify the Home Page URL is correct.");
-        boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_PATH);
-        Assert.assertTrue(isHomePageLoaded);
-
-        log.info("STEP 1.2: Verify Home Page icon is visible.");
-        boolean isHomePageIconVisible = homePage.isHomeIconShown();
-        Assert.assertTrue(isHomePageIconVisible);
-
-        log.info("STEP 1.3: Verify the Login link in the navigation bar is visible.");
-        boolean isLoginLinkVisible = homePage.isNavBarLoginLinkShown();
-        Assert.assertTrue(isLoginLinkVisible);
-
-        log.info("STEP 2: Navigate to the Login Page via the Login link.");
-        homePage.clickOnNavBarLoginLink();
-
+    private void navigateToLoginPageAndValidate() {
         LoginPage loginPage = new LoginPage(super.driver, log);
-
-        log.info("STEP 2.1: Verify the Login Page URL is correct.");
-        boolean isLoginPageLoaded = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
-        Assert.assertTrue(isLoginPageLoaded);
-
-        log.info("STEP 2.2: Verify the Login form header title is correct.");
-        String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
-        Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
-
-        log.info("STEP 3: Enter a valid username.");
-        loginPage.provideUsername(VALID_USERNAME);
-
-        log.info("STEP 4: Enter an INVALID password.");
-        loginPage.providePassword(WRONG_PASSWORD);
-
-        log.info("STEP 5: Select the 'Remember me' checkbox.");
-        loginPage.clickOnRememberMeCheckBox();
-
-        log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
-        loginPage.clickOnSignInButton();
-
-        log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
-        String actualLoginActionMessage = loginPage.getLoginActionMessageText();
-        Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE);
-
-        log.info("STEP 8: Verify that the user remains on the Login Page after unsuccessful sign in.");
-        boolean isUserStillOnLoginPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
-        Assert.assertTrue(isUserStillOnLoginPage);
+        loginPage.navigateToLoginPage();
+        Assert.assertTrue(loginPage.isURLLoaded(LOGIN_PAGE_PATH), "Login page URL validation failed.");
+        Assert.assertEquals(loginPage.getLoginFormHeaderTitleText(), LOGIN_FORM_HEADER_TITLE, "Login form title mismatch.");
+        Assert.assertTrue(loginPage.isLoginSubmitButtonShown(), "Login submit button is not visible.");
     }
 
     @Test
-    public void verifyUserCannotLoginWithInvalidUsername() {
-        HomePage homePage = new HomePage(super.driver, log);
-        log.info("STEP 1: Open the ISkillo Home Page as a registered user (not signed in).");
-        homePage.navigateToHomePage();
-
-        log.info("STEP 1.1: Verify the Home Page URL is correct.");
-        boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_PATH);
-        Assert.assertTrue(isHomePageLoaded);
-
-        log.info("STEP 1.2: Verify Home Page icon is visible.");
-        boolean isHomePageIconVisible = homePage.isHomeIconShown();
-        Assert.assertTrue(isHomePageIconVisible);
-
-        log.info("STEP 1.3: Verify the Login link in the navigation bar is visible.");
-        boolean isLoginLinkVisible = homePage.isNavBarLoginLinkShown();
-        Assert.assertTrue(isLoginLinkVisible);
-
-        log.info("STEP 2: Navigate to the Login Page via the Login link.");
-        homePage.clickOnNavBarLoginLink();
-
+    public void verifyUnsuccessfulLoginWithInvalidUsername() {
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 2.1: Verify the Login Page URL is correct.");
+        log.info("STEP 1: Open ISkillo Login page as a registered user (not signed in).");
+        navigateToLoginPageAndValidate();
+
+        log.info("STEP 2: Enter a valid username.");
+        loginPage.provideUsername(WRONG_USERNAME);
+
+        log.info("STEP 3: Enter an invalid password.");
+        loginPage.providePassword(VALID_PASSWORD);
+
+        log.info("STEP 4: Attempt to sign in by clicking the 'Sign in' button.");
+        loginPage.clickOnSignInButton();
+
+        log.info("STEP 5: Verify the error message for invalid sign in credential.");
+        String actualLoginActionMessage = loginPage.getLoginActionMessageText();
+        Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE,
+                "Error message for invalid credentials is incorrect.");
+
+        log.info("STEP 6: Confirm the user remains on the Login Page.");
+        boolean isUserStillOnLoginPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
+        Assert.assertTrue(isUserStillOnLoginPage, "User did not remain on the Login Page.");
+    }
+
+    @Test
+    public void verifyUserCannotLoginWithInvalidPassword() {
+        LoginPage loginPage = new LoginPage(super.driver, log);
+
+        log.info("STEP 1: Open ISkillo Login page as a registered user (not signed in).");
+        loginPage.navigateToLoginPage();
+
+        log.info("STEP 1.1: Validate that the Login Page URL is correct.");
         boolean isLoginPageLoaded = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
         Assert.assertTrue(isLoginPageLoaded);
 
-        log.info("STEP 2.2: Verify the Login form header title is correct.");
+        log.info("STEP 2: Validate the Login form header title.");
         String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
         Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
 
-        log.info("STEP 3: Enter an INVALID username.");
-        loginPage.provideUsername(WRONG_USERNAME);
+        log.info("STEP 3. Confirm the visibility of the login submit button.");
+        boolean isLoginSubmitButtonShown = loginPage.isLoginSubmitButtonShown();
+        Assert.assertTrue(isLoginSubmitButtonShown);
 
-        log.info("STEP 4: Enter a valid password.");
-        loginPage.providePassword(VALID_PASSWORD);
+        log.info("STEP 4: Enter an invalid username.");
+        loginPage.provideUsername(VALID_USERNAME);
 
-        log.info("STEP 5: Select the 'Remember me' checkbox.");
-        loginPage.clickOnRememberMeCheckBox();
+        log.info("STEP 5: Enter a valid password.");
+        loginPage.providePassword(WRONG_PASSWORD);
 
-        log.info("STEP 6: Click the 'Submit' button to attempt signing in.");
+        log.info("STEP 6: Click on the 'Sign in' button.");
         loginPage.clickOnSignInButton();
 
-        log.info("STEP 7: Verify the ERROR message for unsuccessful sign in.");
+        log.info("STEP 7: Verify the error message for invalid sign in credential.");
         String actualLoginActionMessage = loginPage.getLoginActionMessageText();
-        Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE);
+        Assert.assertEquals(actualLoginActionMessage, LOGIN_ERROR_MESSAGE,
+                "Error message for invalid credentials is incorrect.");
 
-        log.info("STEP 8: Verify that the user remains on the Login Page after unsuccessful Sign in.");
+        log.info("STEP 8: Confirm the user remains on the Login Page.");
         boolean isUserStillOnLoginPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
-        Assert.assertTrue(isUserStillOnLoginPage);
+        Assert.assertTrue(isUserStillOnLoginPage, "User did not remain on the Login Page.");
+    }
+
+    @Test
+    public void verifyUserCannotLoginWithEmptyCredentials() {
+        LoginPage loginPage = new LoginPage(super.driver, log);
+
+        log.info("STEP 1: Open ISkillo Login page as a registered user (not signed in).");
+        loginPage.navigateToLoginPage();
+
+        log.info("STEP 1.1: Validate that the Login Page URL is correct.");
+        boolean isLoginPageLoaded = loginPage.isURLLoaded(LOGIN_PAGE_PATH);
+        Assert.assertTrue(isLoginPageLoaded);
+
+        log.info("STEP 2: Validate the Login form header title.");
+        String actualLoginFormTitle = loginPage.getLoginFormHeaderTitleText();
+        Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_HEADER_TITLE);
+
+        log.info("STEP 3. Confirm the visibility of the login submit button.");
+        boolean isLoginSubmitButtonShown = loginPage.isLoginSubmitButtonShown();
+        Assert.assertTrue(isLoginSubmitButtonShown);
+
+        log.info("STEP 4: Enter an empty username.");
+        loginPage.provideUsername("");
+
+        log.info("STEP 5: Enter an empty password.");
+        loginPage.providePassword("");
+
+        log.info("STEP 6: Verify that the 'Sign in' button is not clickable due to empty credentials.");
+        boolean isLoginSubmitButtonClickable = loginPage.isLoginSubmitButtonClickable();
+        Assert.assertFalse(isLoginSubmitButtonClickable,
+                "Sign in button is clickable despite empty credentials.");
     }
 }

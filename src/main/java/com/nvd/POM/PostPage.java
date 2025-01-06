@@ -7,18 +7,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.io.File;
 
 public class PostPage extends BasePage {
-    final String POST_PAGE_URL = "http://training.skillo-bg.com:4200/posts/create";
+
+    @FindBy (css = "h3.text-center")
+    private WebElement postImageHeaderText;
     @FindBy(css = "img.image-preview")
     private WebElement image;
     @FindBy(css = "input.input-lg")
     private WebElement imageTextElement;
-    @FindBy(css = ".file[type='file']")
-    private WebElement uploadField;
+    @FindBy(css = "input.file")
+    private WebElement uploadImageButton;
     @FindBy(name = "caption")
-    private WebElement captionElement;
+    private WebElement imageCaptionElement;
     @FindBy(id = "create-post")
     private WebElement createPostButton;
 
@@ -27,11 +30,38 @@ public class PostPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    public void uploadImage(File file) {
+        isElementPresent(uploadImageButton);
+        uploadImageButton.sendKeys(file.getAbsolutePath());
+        log.info("CONFIRM # The file was successfully uploaded.");
+    }
+
+    public void providePostCaption(String caption) {
+        waitAndTypeTextInField(imageCaptionElement, caption);
+        log.info("CONFIRM # The user has provided caption text: " + caption);
+    }
+
+    public void clickCreatePostButton() {
+        waitAndClickOnWebElement(createPostButton);
+        log.info("CONFIRM # The user has clicked on the create post submit button.");
+    }
+
+    public String getPostImageHeaderText(){
+        String actualPostImageFormHeaderText = postImageHeaderText.getText();
+        return actualPostImageFormHeaderText;
+    }
+
+    public String getImageName() {
+        String uploadedImageName = getAttributeValue(imageTextElement, "placeholder");
+        log.info("CONFIRM # " + "The image name is: " + uploadedImageName);
+        return uploadedImageName;
+    }
+
     public boolean isImageVisible() {
         boolean isVisible = false;
         try {
             isVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
-            log.info("CONFIRMATION # The file is visible.");
+            log.info("CONFIRM # The file is visible.");
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             log.error("ERROR : The file is not visible");
@@ -40,27 +70,7 @@ public class PostPage extends BasePage {
         return isVisible;
     }
 
-    public String getImageName() {
-        String imageName = imageTextElement.getAttribute("placeholder");
-        log.info("CONFIRMATION # The image name is: " + imageName);
-        return imageName;
-    }
-
-    public void uploadPicture(File file) {
-        isElementPresent(uploadField);
-        uploadField.sendKeys(file.getAbsolutePath());
-        log.info("CONFIRMATION # The file was successfully uploaded.");
-    }
-
-    public void providePostCaption(String caption) {
-        wait.until(ExpectedConditions.visibilityOf(captionElement));
-        captionElement.sendKeys(caption);
-        log.info("CONFIRMATION # The user has provided caption text: " + caption);
-    }
-
-    public void clickCreatePostButton() {
-        wait.until(ExpectedConditions.visibilityOf(createPostButton));
-        createPostButton.click();
-        log.info("CONFIRMATION # The user has clicked on the submit post button.");
+    public boolean isCreatePostButtonShown() {
+        return isElementPresent(createPostButton);
     }
 }

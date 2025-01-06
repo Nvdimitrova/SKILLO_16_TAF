@@ -21,6 +21,7 @@ public class RegistrationNegativePathTest extends BaseTest {
     private static final String VALID_USERNAME = RegistrationDataGenerator.createUsername();
     private static final String VALID_EMAIL = RegistrationDataGenerator.createEmail();
     private static final String VALID_PASSWORD = RegistrationDataGenerator.createPassword();
+    private static final String BIRTHDATE = "07012000";
 
     @Test
     public void verifyUserCannotRegisterWithTakenUsername() {
@@ -72,12 +73,18 @@ public class RegistrationNegativePathTest extends BaseTest {
         log.info("STEP 5: Enter a valid email address.");
         registrationPage.provideEmail(VALID_EMAIL);
 
+        log.info("STEP 6: Enter a valid birthdate.");
+        registrationPage.provideBirthDate(BIRTHDATE);
+
         log.info("STEP 7: Enter a valid password and confirm it.");
         registrationPage.providePassword(VALID_PASSWORD);
         registrationPage.confirmTheProvidedPassword(VALID_PASSWORD);
 
+        log.info("STEP 8: Enter public information.");
+        registrationPage.providePublicInfo("Testing registration with taken username");
+
         log.info("STEP 9: Submit the Registration form.");
-        registrationPage.clickOnSubmitButton();
+        registrationPage.clickOnRegistrationFormSubmitButton();
 
         log.info("STEP 10: Verify error message for duplicate username.");
         String actualRegisterActionMessage = registrationPage.getActionMessageText();
@@ -138,12 +145,18 @@ public class RegistrationNegativePathTest extends BaseTest {
         log.info("STEP 5: Enter taken email address.");
         registrationPage.provideEmail(DUPLICATE_EMAIL);
 
+        log.info("STEP 6: Enter a valid birthdate.");
+        registrationPage.provideBirthDate(BIRTHDATE);
+
         log.info("STEP 7: Enter a valid password and confirm it.");
         registrationPage.providePassword(VALID_PASSWORD);
         registrationPage.confirmTheProvidedPassword(VALID_PASSWORD);
 
+        log.info("STEP 8: Enter public information.");
+        registrationPage.providePublicInfo("Testing registration with taken email");
+
         log.info("STEP 9: Submit the Registration form.");
-        registrationPage.clickOnSubmitButton();
+        registrationPage.clickOnRegistrationFormSubmitButton();
 
         log.info("STEP 10: Verify error message for duplicate email.");
         String actualRegisterActionMessage = registrationPage.getActionMessageText();

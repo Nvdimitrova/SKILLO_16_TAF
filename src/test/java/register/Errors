@@ -3,4 +3,4 @@
 3. User can register with strange birthdate
 4. There is no 'invalid feedback' below birthdate, confirm password and public info, but they are required
 5. Button text should be 'Sign up'
-6. Visible placeholder for birth date is mm/dd/yyyy, but actual is 'Birth date'
+6. After registration user is directly logged in

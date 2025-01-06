@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
-    public static final String LOGIN_PAGE_PATH = "/users/login";
+    final String LOGIN_PAGE_PATH = "/users/login";
 
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
@@ -45,16 +45,9 @@ public class LoginPage extends BasePage {
         waitAndTypeTextInField(passwordInputField, password);
     }
 
-
-    public void enterUserCredentials(String username, String password) {
+    public void provideUserCredentials(String username, String password) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(passwordInputField, password);
-    }
-
-    public void loginWithUser(String username, String password) {
-        waitAndTypeTextInField(usernameInputField, username);
-        waitAndTypeTextInField(passwordInputField, password);
-        clickOnSignInButton();
     }
 
     public void clickOnRememberMeCheckBox() {
@@ -65,7 +58,7 @@ public class LoginPage extends BasePage {
         waitAndClickOnWebElement(loginSubmitButton);
     }
 
-    public void clickOnRegisterLink(){
+    public void clickOnRegisterLink() {
         waitAndClickOnWebElement(registerLink);
     }
 
@@ -74,17 +67,17 @@ public class LoginPage extends BasePage {
         return actualLoginHeaderText;
     }
 
-    public String getLoginFormSubmitButtonText(){
-        String actualLoginFormSubmitButtonText = getElementText(loginSubmitButton);
-        return actualLoginFormSubmitButtonText;
-    }
-
-    public String getCheckBoxLabelText(){
+    public String getCheckBoxLabelText() {
         String actualCheckBoxLabelText = getElementText(checkBoxLabelText);
         return actualCheckBoxLabelText;
     }
 
-    public String getLoginFormFooterLabelText(){
+    public String getLoginFormSubmitButtonText() {
+        String actualLoginFormSubmitButtonText = getElementText(loginSubmitButton);
+        return actualLoginFormSubmitButtonText;
+    }
+
+    public String getLoginFormFooterLabelText() {
         String actualFooterText = getElementText(loginFormFooterLabelText);
         return actualFooterText;
     }
@@ -94,28 +87,28 @@ public class LoginPage extends BasePage {
         return actualMessageText;
     }
 
-    public boolean isCheckBoxShown(){
+    public boolean isCheckBoxShown() {
         return isElementPresent(rememberMeCheckBox);
     }
 
-    public boolean isLoginSubmitButtonShown(){
+    public boolean isLoginSubmitButtonShown() {
         return isElementPresent(loginSubmitButton);
     }
 
-    public boolean isRegisterLinkShown(){
+    public boolean isRegisterLinkShown() {
         return isElementPresent(registerLink);
     }
 
-    public boolean isLoginSubmitButtonClickable(){
+    public boolean isCheckBoxClickable() {
+        return isElementClickable(rememberMeCheckBox);
+    }
+
+    public boolean isLoginSubmitButtonClickable() {
         return isElementClickable(loginSubmitButton);
     }
 
-    public boolean isRegisterLinkClickable(){
+    public boolean isRegisterLinkClickable() {
         return isElementClickable(registerLink);
-    }
-
-    public boolean isCheckBoxClickable(){
-        return isElementClickable(rememberMeCheckBox);
     }
 
     public String verifyUsernameInputFieldPlaceholder() {

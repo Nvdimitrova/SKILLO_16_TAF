@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="113.923" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF\target\test-classes;C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF\target\classes;C:\Users\Nikol\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Nikol\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Nikol\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Nikol\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\Nikol\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\Nikol\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Nikol\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Nikol\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Nikol\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\Nikol\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\Nikol\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\Nikol\.m2\repository\net\bytebuddy\byte-buddy\1.15.1\byte-buddy-1.15.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.1\log4j-api-2.11.1.jar;C:\Users\Nikol\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\Nikol\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Sofia"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
+    <property name="sun.java.command" value="C:\Users\Nikol\AppData\Local\Temp\surefire11685106329315608176\surefirebooter-20250105153647455_3.jar C:\Users\Nikol\AppData\Local\Temp\surefire11685106329315608176 2025-01-05T15-36-37_960-jvmRun1 surefire-20250105153647455_1tmp surefire_0-20250105153647455_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF\target\test-classes;C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF\target\classes;C:\Users\Nikol\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Nikol\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Nikol\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Nikol\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\Nikol\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\Nikol\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Nikol\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Nikol\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Nikol\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\Nikol\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\Nikol\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\Nikol\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\Nikol\.m2\repository\net\bytebuddy\byte-buddy\1.15.1\byte-buddy-1.15.1.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\Nikol\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.1\log4j-api-2.11.1.jar;C:\Users\Nikol\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\Nikol\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Nikol"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-09-17"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Nikol\AppData\Local\Temp\surefire11685106329315608176\surefirebooter-20250105153647455_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23+37-2369"/>
+    <property name="user.name" value="Nikol"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Nikol\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Nikol\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2024.2.3"/>
+    <property name="java.version" value="23"/>
+    <property name="user.dir" value="C:\Users\Nikol\IdeaProjects\SKILLO_AT_16_TAF"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-23\bin;C:\Program Files\Git\cmd;C:\Users\Nikol\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin;;C:\Users\Nikol\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23+37-2369"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="basicEndToEnd" classname="e2e.VerifyUserCanRegisterLoginUpdateProfilePost" time="15.602">
+    <system-out><![CDATA[____________________________________________________________
+Deleting not needed files from folder with path: src/test/resources/reports/
+All files are deleted in Directory: src/test/resources/reports/
+____________________________________________________________
+____________________________________________________________
+Deleting not needed files from folder with path: src/test/resources/screenshots/
+All files are deleted in Directory: src/test/resources/screenshots/
+____________________________________________________________
+[main] 15:36:50,244 INFO  [Nikol TAF]  ==== TEST CASE NAME: basicEndToEnd ====
+[main] 15:36:50,253 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:36:53,303 INFO  [Nikol TAF] STEP 1: Open the ISkillo Home Page.
+[main] 15:36:56,478 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 15:36:56,504 INFO  [Nikol TAF] STEP 2: Click on navigation bar Login link.
+[main] 15:36:56,997 INFO  [Nikol TAF] STEP 3: Provide valid user credentials and click on Sign in button.
+[main] 15:36:58,143 INFO  [Nikol TAF] STEP 4: Click on navigation bar New Post link.
+[main] 15:36:59,176 INFO  [Nikol TAF] STEP 5: Upload picture and provide caption.
+[main] 15:36:59,205 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: CSS SELECTOR LOCATOR EXPRESSION: input.file]
+[main] 15:37:04,328 ERROR [Nikol TAF] # NOT SHOWN # Web element is NOT shown with locator info: LOCATOR STRATEGY BY: CSS SELECTOR LOCATOR EXPRESSION: input.file]
+[main] 15:37:04,402 INFO  [Nikol TAF] CONFIRM # The file was successfully uploaded.
+[main] 15:37:04,868 INFO  [Nikol TAF] CONFIRM # The user has provided caption text: Testing the create post caption
+[main] 15:37:04,868 INFO  [Nikol TAF] STEP 6: Click on Create post button.
+[main] 15:37:05,145 INFO  [Nikol TAF] CONFIRM # The user has clicked on the create post submit button.
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jan 05, 2025 3:36:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifySuccessfulLoginWithValidCredentials" classname="login.LoginHappyPathTest" time="5.446">
+    <system-out><![CDATA[[main] 15:37:08,825 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:09,170 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifySuccessfulLoginWithValidCredentials ====
+[main] 15:37:09,171 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:10,902 INFO  [Nikol TAF] STEP 1: Open the ISkillo Home Page as a registered user (not signed in).
+[main] 15:37:12,470 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 15:37:12,488 INFO  [Nikol TAF] STEP 1.1: Verify the Home Page loaded successfully.
+[main] 15:37:12,511 INFO  [Nikol TAF] STEP 1.2: Verify the Login link in the navigation bar is visible.
+[main] 15:37:12,534 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:37:12,569 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:37:12,569 INFO  [Nikol TAF] STEP 2: Navigate to the Login Page via the Login link.
+[main] 15:37:12,974 INFO  [Nikol TAF] STEP 2.1: Verify the Login Page loaded successfully.
+[main] 15:37:13,547 INFO  [Nikol TAF] STEP 2.2: Verify that the Login form header title matches the expected value.
+[main] 15:37:13,655 INFO  [Nikol TAF] STEP 3. Verify that the login submit button is visible.
+[main] 15:37:13,677 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:13,707 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:13,708 INFO  [Nikol TAF] STEP 4: Provide valid user credentials.
+[main] 15:37:14,326 INFO  [Nikol TAF] STEP 5: Select the 'Remember me' checkbox.
+[main] 15:37:14,649 INFO  [Nikol TAF] STEP 6: Click the 'Sign in' button to attempt signing in.
+[main] 15:37:14,903 INFO  [Nikol TAF] STEP 7: Verify successful Sign in message is displayed.
+[main] 15:37:15,459 INFO  [Nikol TAF] STEP 8: Verify the user is redirected to the Home Page after signing in.
+[main] 15:37:16,006 INFO  [Nikol TAF] STEP 9: Verify Profile link is visible.
+[main] 15:37:16,028 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-profile]
+[main] 15:37:16,058 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-profile]
+[main] 15:37:16,058 INFO  [Nikol TAF] STEP 10: Verify sign out button is visible.
+[main] 15:37:16,077 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //i[contains(@class,'fas fa-sign-out-alt fa-lg')]]
+[main] 15:37:16,101 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //i[contains(@class,'fas fa-sign-out-alt fa-lg')]]
+[main] 15:37:16,101 INFO  [Nikol TAF] STEP 11: Click the sign out button.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUnsuccessfulLoginWithInvalidUsername" classname="login.LoginNegativePathTest" time="3.397">
+    <system-out><![CDATA[[main] 15:37:16,348 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:16,704 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUnsuccessfulLoginWithInvalidUsername ====
+[main] 15:37:16,704 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:18,583 INFO  [Nikol TAF] STEP 1: Open ISkillo Login page as a registered user (not signed in).
+[main] 15:37:20,412 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 15:37:20,572 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:20,607 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:20,607 INFO  [Nikol TAF] STEP 2: Enter a valid username.
+[main] 15:37:20,956 INFO  [Nikol TAF] STEP 3: Enter an invalid password.
+[main] 15:37:21,388 INFO  [Nikol TAF] STEP 4: Attempt to sign in by clicking the 'Sign in' button.
+[main] 15:37:21,695 INFO  [Nikol TAF] STEP 5: Verify the error message for invalid sign in credential.
+[main] 15:37:21,956 INFO  [Nikol TAF] STEP 6: Confirm the user remains on the Login Page.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCannotLoginWithInvalidPassword" classname="login.LoginNegativePathTest" time="4.075">
+    <system-out><![CDATA[[main] 15:37:21,980 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:22,304 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUserCannotLoginWithInvalidPassword ====
+[main] 15:37:22,305 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:24,310 INFO  [Nikol TAF] STEP 1: Open ISkillo Login page as a registered user (not signed in).
+[main] 15:37:26,629 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 15:37:26,644 INFO  [Nikol TAF] STEP 1.1: Validate that the Login Page URL is correct.
+[main] 15:37:26,667 INFO  [Nikol TAF] STEP 2: Validate the Login form header title.
+[main] 15:37:26,755 INFO  [Nikol TAF] STEP 3. Confirm the visibility of the login submit button.
+[main] 15:37:26,784 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:26,826 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:26,826 INFO  [Nikol TAF] STEP 4: Enter an invalid username.
+[main] 15:37:27,151 INFO  [Nikol TAF] STEP 5: Enter a valid password.
+[main] 15:37:27,497 INFO  [Nikol TAF] STEP 6: Click on the 'Sign in' button.
+[main] 15:37:27,796 INFO  [Nikol TAF] STEP 7: Verify the error message for invalid sign in credential.
+[main] 15:37:28,359 INFO  [Nikol TAF] STEP 8: Confirm the user remains on the Login Page.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCannotLoginWithEmptyCredentials" classname="login.LoginNegativePathTest" time="8.936">
+    <system-out><![CDATA[[main] 15:37:28,384 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:28,683 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUserCannotLoginWithEmptyCredentials ====
+[main] 15:37:28,683 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:30,582 INFO  [Nikol TAF] STEP 1: Open ISkillo Login page as a registered user (not signed in).
+[main] 15:37:33,208 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 15:37:33,222 INFO  [Nikol TAF] STEP 1.1: Validate that the Login Page URL is correct.
+[main] 15:37:33,244 INFO  [Nikol TAF] STEP 2: Validate the Login form header title.
+[main] 15:37:33,334 INFO  [Nikol TAF] STEP 3. Confirm the visibility of the login submit button.
+[main] 15:37:33,354 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:33,397 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:33,397 INFO  [Nikol TAF] STEP 4: Enter an empty username.
+[main] 15:37:33,698 INFO  [Nikol TAF] STEP 5: Enter an empty password.
+[main] 15:37:33,960 INFO  [Nikol TAF] STEP 6: Verify that the 'Sign in' button is not clickable due to empty credentials.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyLoginPageLayout" classname="login.LoginPageLayoutTest" time="8.99">
+    <system-out><![CDATA[[main] 15:37:39,518 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:39,816 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyLoginPageLayout ====
+[main] 15:37:39,816 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:41,577 INFO  [Nikol TAF] STEP 1: Navigate to the Login Page.
+[main] 15:37:44,191 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 15:37:44,206 INFO  [Nikol TAF] STEP 2: Verify the Login form header title.
+[main] 15:37:44,290 INFO  [Nikol TAF] STEP 3: Verify the placeholder text for username input field.
+[main] 15:37:44,360 INFO  [Nikol TAF] STEP 4: Verify the placeholder text for password input field.
+[main] 15:37:44,433 INFO  [Nikol TAF] STEP 5: Verify the Login form checkbox is visible.
+[main] 15:37:44,455 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //input[contains(@formcontrolname,'rememberMe')]]
+[main] 15:37:44,489 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //input[contains(@formcontrolname,'rememberMe')]]
+[main] 15:37:44,489 INFO  [Nikol TAF] STEP 5.1: Verify the Login form checkbox is clickable.
+[main] 15:37:44,590 INFO  [Nikol TAF] STEP 5.2: Verify the Login form checkbox label text.
+[main] 15:37:44,673 INFO  [Nikol TAF] STEP 6: Verify the Login form submit button is visible.
+[main] 15:37:44,696 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:44,732 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: sign-in-button]
+[main] 15:37:44,732 INFO  [Nikol TAF] STEP 6.1: Verify Login form submit button is not clickable without user data.
+[main] 15:37:50,283 INFO  [Nikol TAF] STEP 6.2: Verify Login form submit button text.
+[main] 15:37:50,354 INFO  [Nikol TAF] STEP 7: Verify the Login form footer label text.
+[main] 15:37:50,438 INFO  [Nikol TAF] Step 8: Verify the Register link is visible.
+[main] 15:37:50,462 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:37:50,497 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:37:50,498 INFO  [Nikol TAF] Step 9: Verify the Register link is clickable.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:41 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanUploadImage" classname="post.PostTests" time="13.449">
+    <system-out><![CDATA[[main] 15:37:50,567 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:37:50,873 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUserCanUploadImage ====
+[main] 15:37:50,873 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:37:52,568 INFO  [Nikol TAF] STEP 1: Navigate to the Login Page.
+[main] 15:37:54,830 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 15:37:54,845 INFO  [Nikol TAF] STEP 2: Provide valid user credentials.
+[main] 15:37:55,546 INFO  [Nikol TAF] STEP 3: Click on the 'Sign in' button.
+[main] 15:37:55,850 INFO  [Nikol TAF] STEP 4: Verify navigation bar 'New Post' link visible.
+[main] 15:37:56,362 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-new-post]
+[main] 15:37:56,395 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-new-post]
+[main] 15:37:56,396 INFO  [Nikol TAF] STEP 4.1: Click on 'New Post' link.
+[main] 15:37:56,758 INFO  [Nikol TAF] STEP 5: Verify post picture form heading text.
+[main] 15:37:56,812 INFO  [Nikol TAF] STEP 6: Verify the 'Create post' button is visible
+[main] 15:37:56,834 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: create-post]
+[main] 15:37:56,865 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: create-post]
+[main] 15:37:56,865 INFO  [Nikol TAF] STEP 7: Upload a picture for the new post.
+[main] 15:37:56,884 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: CSS SELECTOR LOCATOR EXPRESSION: input.file]
+[main] 15:38:02,000 ERROR [Nikol TAF] # NOT SHOWN # Web element is NOT shown with locator info: LOCATOR STRATEGY BY: CSS SELECTOR LOCATOR EXPRESSION: input.file]
+[main] 15:38:02,073 INFO  [Nikol TAF] CONFIRM # The file was successfully uploaded.
+[main] 15:38:02,074 INFO  [Nikol TAF] STEP 8: Add a caption to the post.
+[main] 15:38:02,516 INFO  [Nikol TAF] CONFIRM # The user has provided caption text: Am I testing the code or is the code testing me...
+[main] 15:38:02,517 INFO  [Nikol TAF] STEP 9: Click the 'Create Post' button.
+[main] 15:38:02,756 INFO  [Nikol TAF] CONFIRM # The user has clicked on the create post submit button.
+[main] 15:38:02,757 INFO  [Nikol TAF] STEP 10: Verify the post count has increased.
+[main] 15:38:05,294 INFO  [Nikol TAF] STEP 11: Click on the first post in the profile.
+[main] 15:38:05,874 INFO  [Nikol TAF] STEP 12: Verify the uploaded image is visible in the post modal.
+[main] 15:38:05,959 INFO  [Nikol TAF] STEP 13: Verify the post was created by the same user.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:37:52 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifySuccessfulRegistrationWithValidCredentials" classname="register.RegistrationHappyPathTest" time="9.259">
+    <system-out><![CDATA[[main] 15:38:06,018 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:38:06,357 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifySuccessfulRegistrationWithValidCredentials ====
+[main] 15:38:06,357 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:38:08,100 INFO  [Nikol TAF] STEP 1: Open the ISkillo Home Page as a guest user.
+[main] 15:38:11,246 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 15:38:11,262 INFO  [Nikol TAF] STEP 1.1: Verify the Home Page loaded successfully.
+[main] 15:38:11,286 INFO  [Nikol TAF] STEP 1.2: Verify the Login link in the navigation bar is visible.
+[main] 15:38:11,309 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:11,357 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:11,357 INFO  [Nikol TAF] STEP 2: Navigate to the Login Page via the Login link.
+[main] 15:38:11,808 INFO  [Nikol TAF] STEP 2.1: Verify the Login Page loaded successfully.
+[main] 15:38:12,381 INFO  [Nikol TAF] Step 3: Verify the Register link is visible on the Login Page.
+[main] 15:38:12,423 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:12,452 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:12,452 INFO  [Nikol TAF] Step 3: Verify the Register link is clickable.
+[main] 15:38:12,510 INFO  [Nikol TAF] STEP 4: Navigate to the Registration Page via the Register link.
+[main] 15:38:12,787 INFO  [Nikol TAF] STEP 4.1: Verify the Registration Page loaded successfully.
+[main] 15:38:12,814 INFO  [Nikol TAF] STEP 4.2: Verify the Registration form header title is correct.
+[main] 15:38:12,895 INFO  [Nikol TAF] STEP 5: Provide valid user credentials.
+[main] 15:38:14,915 INFO  [Nikol TAF] STEP 6: Submit the Registration form.
+[main] 15:38:15,255 INFO  [Nikol TAF] STEP 7: Verify successful registration message.
+[main] 15:38:16,632 INFO  [Nikol TAF] STEP 8: Verify that the user is redirected to Home Page after registration.
+[main] 15:38:17,217 INFO  [Nikol TAF] STEP 9: Verify Profile link is visible.
+[main] 15:38:17,255 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-profile]
+[main] 15:38:17,297 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-profile]
+[main] 15:38:17,297 INFO  [Nikol TAF] STEP 10: Verify Sign out button is visible.
+[main] 15:38:17,322 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //i[contains(@class,'fas fa-sign-out-alt fa-lg')]]
+[main] 15:38:17,356 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //i[contains(@class,'fas fa-sign-out-alt fa-lg')]]
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:38:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCannotRegisterWithTakenUsername" classname="register.RegistrationNegativePathTest" time="7.075">
+    <system-out><![CDATA[[main] 15:38:17,357 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:38:17,652 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUserCannotRegisterWithTakenUsername ====
+[main] 15:38:17,653 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:38:19,491 INFO  [Nikol TAF] STEP 1: Open the ISkillo Home Page as a guest user.
+[main] 15:38:22,009 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 15:38:22,022 INFO  [Nikol TAF] STEP 1.1: Verify the Home Page loaded successfully.
+[main] 15:38:22,048 INFO  [Nikol TAF] STEP 1.2: Verify Home Page icon is visible.
+[main] 15:38:22,070 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: homeIcon]
+[main] 15:38:22,103 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: homeIcon]
+[main] 15:38:22,103 INFO  [Nikol TAF] STEP 1.3: Verify the Login link in the navigation bar is visible.
+[main] 15:38:22,124 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:22,262 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:22,262 INFO  [Nikol TAF] STEP 2: Navigate to the Login Page via the Login link.
+[main] 15:38:22,604 INFO  [Nikol TAF] STEP 2.1: Verify the Login Page loaded successfully.
+[main] 15:38:23,164 INFO  [Nikol TAF] Step 2.2: Verify the Register link is visible on the Login Page.
+[main] 15:38:23,207 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:23,242 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:23,242 INFO  [Nikol TAF] STEP 3: Navigate to the Registration Page via the Register link.
+[main] 15:38:23,537 INFO  [Nikol TAF] STEP 3.1: Verify the Registration Page loaded successfully.
+[main] 15:38:23,559 INFO  [Nikol TAF] STEP 3.2: Verify the Registration form header title is correct.
+[main] 15:38:23,639 INFO  [Nikol TAF] STEP 4: Enter taken username.
+[main] 15:38:23,937 INFO  [Nikol TAF] STEP 5: Enter a valid email address.
+[main] 15:38:24,256 INFO  [Nikol TAF] STEP 6: Enter a valid birthdate.
+[main] 15:38:24,511 INFO  [Nikol TAF] STEP 7: Enter a valid password and confirm it.
+[main] 15:38:25,182 INFO  [Nikol TAF] STEP 8: Enter public information.
+[main] 15:38:25,588 INFO  [Nikol TAF] STEP 9: Submit the Registration form.
+[main] 15:38:25,925 INFO  [Nikol TAF] STEP 10: Verify error message for duplicate username.
+[main] 15:38:26,546 INFO  [Nikol TAF] STEP 11: Verify that the user remains on the Registration Page after unsuccessful registration.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:38:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCannotRegisterWithTakenEmail" classname="register.RegistrationNegativePathTest" time="6.989">
+    <system-out><![CDATA[[main] 15:38:26,567 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:38:26,843 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyUserCannotRegisterWithTakenEmail ====
+[main] 15:38:26,843 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:38:28,777 INFO  [Nikol TAF] STEP 1: Open the ISkillo Home Page as a guest user.
+[main] 15:38:31,651 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 15:38:31,676 INFO  [Nikol TAF] STEP 1.1: Verify the Home Page loaded successfully.
+[main] 15:38:31,707 INFO  [Nikol TAF] STEP 1.2: Verify Home Page icon is visible.
+[main] 15:38:31,765 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: homeIcon]
+[main] 15:38:31,811 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: homeIcon]
+[main] 15:38:31,811 INFO  [Nikol TAF] STEP 1.3: Verify the Login link in the navigation bar is visible.
+[main] 15:38:31,831 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:31,879 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: ID LOCATOR EXPRESSION: nav-link-login]
+[main] 15:38:31,879 INFO  [Nikol TAF] STEP 2: Navigate to the Login Page via the Login link.
+[main] 15:38:32,157 INFO  [Nikol TAF] STEP 2.1: Verify the Login Page loaded successfully.
+[main] 15:38:32,704 INFO  [Nikol TAF] Step 2.2: Verify the Register link is visible on the Login Page.
+[main] 15:38:32,747 INFO  [Nikol TAF] ACTION @ The user is verifying web element with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:32,784 INFO  [Nikol TAF] # SHOWN # Web element is shown with locator info: LOCATOR STRATEGY BY: XPATH LOCATOR EXPRESSION: //a[contains(.,'Register')]]
+[main] 15:38:32,784 INFO  [Nikol TAF] STEP 3: Navigate to the Registration Page via the Register link.
+[main] 15:38:33,167 INFO  [Nikol TAF] STEP 3.1: Verify the Registration Page loaded successfully.
+[main] 15:38:33,192 INFO  [Nikol TAF] STEP 3.2: Verify the Registration form header title is correct.
+[main] 15:38:33,285 INFO  [Nikol TAF] STEP 4: Enter a valid username.
+[main] 15:38:33,571 INFO  [Nikol TAF] STEP 5: Enter taken email address.
+[main] 15:38:33,869 INFO  [Nikol TAF] STEP 6: Enter a valid birthdate.
+[main] 15:38:34,174 INFO  [Nikol TAF] STEP 7: Enter a valid password and confirm it.
+[main] 15:38:34,818 INFO  [Nikol TAF] STEP 8: Enter public information.
+[main] 15:38:35,188 INFO  [Nikol TAF] STEP 9: Submit the Registration form.
+[main] 15:38:35,558 INFO  [Nikol TAF] STEP 10: Verify error message for duplicate email.
+[main] 15:38:35,745 INFO  [Nikol TAF] STEP 11: Verify that the user remains on the Registration Page after unsuccessful registration.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:38:28 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyRegistrationPagePlaceHolders" classname="register.RegistrationPageLayoutTest" time="2.958">
+    <system-out><![CDATA[[main] 15:38:35,766 INFO  [Nikol TAF] Closing the WebDriver
+[main] 15:38:36,128 INFO  [Nikol TAF]  ==== TEST CASE NAME: verifyRegistrationPagePlaceHolders ====
+[main] 15:38:36,129 INFO  [Nikol TAF] Create driver: chrome
+[main] 15:38:37,831 INFO  [Nikol TAF] STEP 1: Navigate to the Registration Page.
+[main] 15:38:40,386 INFO  [Nikol TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/register
+[main] 15:38:40,399 INFO  [Nikol TAF] STEP 2: Verify the placeholder for username input field.
+[main] 15:38:40,473 INFO  [Nikol TAF] STEP 3: Verify the placeholder for email input field.
+[main] 15:38:40,532 INFO  [Nikol TAF] STEP 4: Verify the placeholder for birthdate input field
+[main] 15:38:40,599 INFO  [Nikol TAF] STEP 5: Verify the placeholder for password input field.
+[main] 15:38:40,662 INFO  [Nikol TAF] STEP 6: Verify the placeholder for confirm password input field.
+[main] 15:38:40,731 INFO  [Nikol TAF] STEP 7: Verify the placeholder for confirm password input field.
+]]></system-out>
+    <system-err><![CDATA[Jan 05, 2025 3:38:37 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+</testsuite>
