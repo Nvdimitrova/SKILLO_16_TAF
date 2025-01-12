@@ -25,16 +25,16 @@ public class LoginPage extends BasePage {
     private WebElement loginFormFooterLabelText;
     @FindBy(xpath = "//a[contains(.,'Register')]")
     private WebElement registerLink;
-    @FindBy(css = ".toast-message.ng-star-inserted")
-    private WebElement toastMessage;
+    @FindBy(css = "div[aria-label=\"Successful login!\"]")
+    private WebElement signInToastMessage;
+    @FindBy(css = "div[aria-label=\"Wrong username or password!\"]")
+    private WebElement wrongCredentialsToastMessage;
+    @FindBy(css = "div[aria-label=\"Successful logout!\"]")
+    private WebElement signOutToastMessage;
 
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
-    }
-
-    public void navigateToLoginPage() {
-        navigateTo(LOGIN_PAGE_PATH);
     }
 
     public void provideUsername(String username) {
@@ -82,12 +82,22 @@ public class LoginPage extends BasePage {
         return actualFooterText;
     }
 
-    public String getLoginActionMessageText() {
-        String actualMessageText = getElementText(toastMessage);
+    public String getSignInActionMessageText() {
+        String actualMessageText = getElementText(signInToastMessage);
         return actualMessageText;
     }
 
-    public boolean isCheckBoxShown() {
+    public String getSignOutActionMessageText() {
+        String actualMessageText = getElementText(signOutToastMessage);
+        return actualMessageText;
+    }
+
+    public String getWrongCredentialsActionMessageText() {
+        String actualMessageText = getElementText(wrongCredentialsToastMessage);
+        return actualMessageText;
+    }
+
+    public boolean isRememberMeCheckboxShown() {
         return isElementPresent(rememberMeCheckBox);
     }
 
@@ -109,6 +119,10 @@ public class LoginPage extends BasePage {
 
     public boolean isRegisterLinkClickable() {
         return isElementClickable(registerLink);
+    }
+
+    public boolean isRememberMeCheckboxClickable() {
+        return isElementClickable(rememberMeCheckBox);
     }
 
     public String verifyUsernameInputFieldPlaceholder() {

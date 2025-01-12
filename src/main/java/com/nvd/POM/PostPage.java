@@ -11,8 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 
 public class PostPage extends BasePage {
+    final String POST_PAGE_PATH = "/posts/create";
 
-    @FindBy (css = "h3.text-center")
+    @FindBy(css = "h3.text-center")
     private WebElement postImageHeaderText;
     @FindBy(css = "img.image-preview")
     private WebElement image;
@@ -24,6 +25,8 @@ public class PostPage extends BasePage {
     private WebElement imageCaptionElement;
     @FindBy(id = "create-post")
     private WebElement createPostButton;
+    @FindBy(css = "div[aria-label=\"Post created!\"]")
+    private WebElement toastMessage;
 
     public PostPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -46,15 +49,20 @@ public class PostPage extends BasePage {
         log.info("CONFIRM # The user has clicked on the create post submit button.");
     }
 
-    public String getPostImageHeaderText(){
+    public String getPostImageHeaderText() {
         String actualPostImageFormHeaderText = postImageHeaderText.getText();
         return actualPostImageFormHeaderText;
     }
 
-    public String getImageName() {
-        String uploadedImageName = getAttributeValue(imageTextElement, "placeholder");
-        log.info("CONFIRM # " + "The image name is: " + uploadedImageName);
-        return uploadedImageName;
+    public String getFileName() {
+        String fileName = getAttributeValue(imageTextElement, "placeholder");
+        log.info("CONFIRM # " + "The file name is: " + fileName);
+        return fileName;
+    }
+
+    public String getUploadActionMessage() {
+        String actualUploadMessageText = getElementText(toastMessage);
+        return actualUploadMessageText;
     }
 
     public boolean isImageVisible() {
@@ -72,5 +80,9 @@ public class PostPage extends BasePage {
 
     public boolean isCreatePostButtonShown() {
         return isElementPresent(createPostButton);
+    }
+
+    public boolean isCreatePostButtonClickable() {
+        return isElementClickable(createPostButton);
     }
 }

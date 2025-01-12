@@ -22,7 +22,6 @@ public class BaseTest {
     protected static final String DOWNLOADS_DIRECTORY = TEST_RESOURCES_DIR.concat("downloads/");
     protected static final String SCREENSHOTS_DIRECTORY = TEST_RESOURCES_DIR.concat("screenshots/");
     protected static final String REPORTS_DIRECTORY = TEST_RESOURCES_DIR.concat("reports/");
-    protected static final String UPLOAD_DIRECTORY = TEST_RESOURCES_DIR.concat("uploads/");
 
     protected WebDriver driver;
     protected Logger log;

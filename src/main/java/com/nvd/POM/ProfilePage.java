@@ -14,13 +14,14 @@ import java.util.List;
 public class ProfilePage extends BasePage {
     final String PROFILE_PAGE_PATH = "/users/8864";
 
-    @FindBy(tagName = "h4")
+    @FindBy(css = "h2")
     private WebElement profileUsername;
     @FindBy(id = "upload-img")
     private WebElement uploadProfileImage;
+    @FindBy(css = "img[alt='Profile Picture']")
+    private WebElement profileImage;
     @FindBy(tagName = "app-post")
     private WebElement postImageDisplayed;
-
     @FindBy(css = "i.like.far.fa-heart.fa-2x.ng-star-inserted")
     private WebElement likeButton;
     @FindBy(css = "label.delete-ask")
@@ -33,44 +34,33 @@ public class ProfilePage extends BasePage {
     private WebElement postLikeMessage;
     @FindBy(xpath = "//div[contains(@aria-label,'Post disliked')]")
     private WebElement postDislikeMessage;
-
+    @FindBy(css = "div[aria-label=\"Profile picture updated\"]")
+    private WebElement toastMessage;
 
     public ProfilePage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateToProfilePage() {
-        navigateTo(PROFILE_PAGE_PATH);
-    }
-
     public void uploadProfilePicture(File file) {
         uploadProfileImage.sendKeys(file.getAbsolutePath());
+        log.info("CONFIRM # The profile picture was successfully uploaded.");
+    }
+
+    public void clickPost(int postIndex) {
+        List<WebElement> posts = Collections.singletonList(wait.until(ExpectedConditions.visibilityOf(postImageDisplayed)));
+        posts.get(postIndex).click();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("return document.readyState").equals("complete");
     }
 
     public void clickOnYesButton() {
         waitAndClickOnWebElement(areYouSureYesButton);
     }
 
-    public void clickOnDeleteButton() {
+    public void clickOnDeletePostButton() {
         waitAndClickOnWebElement(deletePostButton);
-    }
-
-    public void clickOnLikeButton() {
-        waitAndClickOnWebElement(likeButton);
-    }
-
-    public void dislikePost(){
-        waitAndClickOnWebElement(likeButton);
-    }
-
-//    public void ClickOnDislikeButton() {
-//        waitAndClickOnWebElement(dislikeButton);
-//    }
-
-    Actions action = new Actions(driver);
-    public void HoverOverProfilePicture() {
-        action.moveToElement(uploadProfileImage).perform();
     }
 
     public String getUsername() {
@@ -83,22 +73,35 @@ public class ProfilePage extends BasePage {
         return posts.size();
     }
 
-    public void clickPost(int postIndex) {
-        List<WebElement> posts = Collections.singletonList(wait.until(ExpectedConditions.visibilityOf(postImageDisplayed)));
-        posts.get(postIndex).click();
+    public String getUploadActionMessage() {
+        String actualUploadMessageText = getElementText(toastMessage);
+        return actualUploadMessageText;
+    }
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("return document.readyState").equals("complete");
+    public boolean isDeletePostButtonShown() {
+        return isElementPresent(deletePostButton);
+    }
+
+    public boolean isAreYouSureYesButtonShown() {
+        return isElementPresent(areYouSureYesButton);
+    }
+
+    public boolean isDeletePostButtonClickable() {
+        return isElementClickable(deletePostButton);
+    }
+
+    public boolean isAreYouSureYesButtonClickable() {
+        return isElementClickable(areYouSureYesButton);
     }
 
     public boolean isDeletedMessageVisible() {
         boolean isDeletedMessageVisible = false;
         try {
             isDeletedMessageVisible = wait.until(ExpectedConditions.visibilityOf(confirmDeletionMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post Deleted! message is displayed.");
+            log.info("CONFIRMATION # The 'Post Deleted!' message is displayed.");
         } catch (NoSuchElementException e) {
             e.printStackTrace();
-            log.error("ERROR : The Post Deleted! message is not displayed!");
+            log.error("ERROR : The 'Post Deleted!' message is not displayed!");
             isDeletedMessageVisible = false;
         }
         return isDeletedMessageVisible;
@@ -128,6 +131,19 @@ public class ProfilePage extends BasePage {
             isDislikeMessageVisible = false;
         }
         return isDislikeMessageVisible;
+    }
+
+    public boolean isProfileImageVisible() {
+        boolean isVisible = false;
+        try {
+            isVisible = wait.until(ExpectedConditions.visibilityOf(profileImage)).isDisplayed();
+            log.info("CONFIRM # The file is visible.");
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            log.error("ERROR : The file is not visible");
+            isVisible = false;
+        }
+        return isVisible;
     }
 
     public void closePostModal() {

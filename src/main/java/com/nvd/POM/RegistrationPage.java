@@ -1,10 +1,15 @@
 package com.nvd.POM;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegistrationPage extends BasePage {
     final String REGISTRATION_PAGE_PATH = "/users/register";
@@ -26,7 +31,7 @@ public class RegistrationPage extends BasePage {
     @FindBy(css = "span.invalid-feedback")
     private WebElement invalidFeedbackMessage;
     @FindBy(id = "sign-in-button")
-    private WebElement registrationFormSubmitButton;
+    private WebElement registrationSubmitButton;
     @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement toastMessage;
 
@@ -34,10 +39,6 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
-    }
-
-    public void navigateToRegistrationPage() {
-        navigateTo(REGISTRATION_PAGE_PATH);
     }
 
     public void provideUsername(String username) {
@@ -64,7 +65,7 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(publicInfoInputField, publicInfo);
     }
 
-    public void provideUserCredentials(String username, String email, String birthDate, String password,String confirmPassword, String publicInfo) {
+    public void provideUserCredentials(String username, String email, String birthDate, String password, String confirmPassword, String publicInfo) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(emailInputField, email);
         waitAndTypeTextInField(birthDateInputField, birthDate);
@@ -74,12 +75,17 @@ public class RegistrationPage extends BasePage {
     }
 
     public void clickOnRegistrationFormSubmitButton() {
-        waitAndClickOnWebElement(registrationFormSubmitButton);
+        waitAndClickOnWebElement(registrationSubmitButton);
     }
 
     public String getRegistrationFormHeaderTitleText() {
         String actualTitleText = getElementText(registrationFormHeaderTitle);
         return actualTitleText;
+    }
+
+    public String getRegistrationFormSubmitButtonText() {
+        String actualButtonText = getElementText(registrationSubmitButton);
+        return actualButtonText;
     }
 
     public String getInvalidFeedbackMessageText() {
@@ -90,6 +96,14 @@ public class RegistrationPage extends BasePage {
     public String getActionMessageText() {
         String actualMessageText = getElementText(toastMessage);
         return actualMessageText;
+    }
+
+    public boolean isRegistrationSubmitButtonShown() {
+        return isElementPresent(registrationSubmitButton);
+    }
+
+    public boolean isRegistrationSubmitButtonClickable() {
+        return isElementClickable(registrationSubmitButton);
     }
 
     public String verifyUsernameInputFieldPlaceholder() {
@@ -120,5 +134,31 @@ public class RegistrationPage extends BasePage {
     public String verifyPublicInfoInputFieldPlaceholder() {
         String actualPublicInfoPlaceholder = getAttributeValue(publicInfoInputField, "placeholder");
         return actualPublicInfoPlaceholder;
+    }
+
+    public void verifyFieldsInvalidFeedback() {
+        List<WebElement> fields = driver.findElements(By.cssSelector("input, textarea"));
+        List<String> errors = new ArrayList<>();
+
+        for (WebElement field : fields) {
+            String fieldName = field.getAttribute("placeholder");
+
+            field.click();
+            fields.get((fields.indexOf(field) + 1) % fields.size()).click();
+
+            List<WebElement> errorMessages = field.findElements(By.xpath("./following-sibling::span[contains(@class, 'invalid-feedback')]"));
+
+            if (!errorMessages.isEmpty() && errorMessages.get(0).isDisplayed()) {
+                log.info("CONFIRMATION # Invalid feedback message is displayed for field: " + fieldName);
+            } else {
+                String errorMessage = "ERROR : Invalid feedback message is not displayed for field: " + fieldName;
+                log.error(errorMessage);
+                errors.add(errorMessage);
+            }
+        }
+
+        if (!errors.isEmpty()) {
+            Assert.fail("The following validation errors were found:\n" + String.join("\n", errors));
+        }
     }
 }

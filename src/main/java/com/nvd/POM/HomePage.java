@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class HomePage extends BasePage {
     final String HOME_PAGE_PATH = "/posts/all";
 
@@ -51,18 +50,6 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navBarSignOutButton);
     }
 
-    public void typeTextInNavBarSearchInputField(String text) {
-        waitAndTypeTextInField(navBarSearchInputField, text);
-    }
-
-    public boolean isHomeIconShown() {
-        return isElementPresent(headerHomeIcon);
-    }
-
-    public boolean isNavBarHomeLinkShown() {
-        return isElementPresent(navBarHomeLink);
-    }
-
     public boolean isNavBarLoginLinkShown() {
         return isElementPresent(navBarLoginLink);
     }
@@ -75,11 +62,23 @@ public class HomePage extends BasePage {
         return isElementPresent(navBarNewPostLink);
     }
 
-    public boolean isNavBarSearchInputFieldShown() {
-        return isElementPresent(navBarSearchInputField);
-    }
-
     public boolean isNavBarSignOutButtonShown() {
         return isElementPresent(navBarSignOutButton);
+    }
+
+    public boolean isNavBarSignOutButtonClickable() {
+        return isElementClickable(navBarSignOutButton);
+    }
+
+    public boolean isNavBarLoginLinkClickable() {
+        return isElementClickable(navBarLoginLink);
+    }
+
+    public boolean isNavBarProfileLinkClickable() {
+        return isElementClickable(navBarProfileLink);
+    }
+
+    public boolean isNavBarNewPostLinkClickable() {
+        return isElementClickable(navBarNewPostLink);
     }
 }

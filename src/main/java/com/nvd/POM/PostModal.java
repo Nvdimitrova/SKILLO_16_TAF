@@ -7,29 +7,30 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PostModal extends BasePage {
-    @FindBy (className = "post-modal")
-    private WebElement postModalWindow;
-    @FindBy (css = ".post-modal-img img")
+    private final WebElement postModalWindow;
+
+    @FindBy(css = ".post-modal-img img")
     private WebElement postModalImage;
-    @FindBy (className = "post-user")
+    @FindBy(className = "post-user")
     private WebElement postProfileUsername;
 
     public PostModal(WebDriver driver, Logger log) {
         super(driver, log);
+        this.postModalWindow = driver.findElement(By.className("post-modal"));
         PageFactory.initElements(driver, this);
     }
 
-    public boolean isImageVisible() {
+    public String getPostUser() {
+        wait.until(ExpectedConditions.visibilityOf(postProfileUsername));
+        return postProfileUsername.getText();
+    }
+
+    public boolean isImageShown() {
         try {
             return wait.until(ExpectedConditions.visibilityOf(postModalImage)).isDisplayed();
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             return false;
         }
-    }
-
-    public String getPostUser() {
-        wait.until(ExpectedConditions.visibilityOf(postProfileUsername));
-        return postProfileUsername.getText();
     }
 }
