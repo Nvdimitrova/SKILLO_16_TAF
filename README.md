@@ -86,7 +86,7 @@ automation activities, making it an invaluable resource for software testing and
     - **Selenium:** Version 4.25.0 and up.
 
 To get started, please visit the Test Automation Framework repository
-at: [SKILLO_AT_16_TAF](https://github.com/Nvdimitrova/SKILLO_AT_16_TAF)
+at: [SKILLO_AT_16_TAF](https://github.com/Nvdimitrova/SKILLO_16_TAF)
 
 Ensure that you can clone the repository by following one of the three methods outlined below:
 
@@ -204,4 +204,4 @@ channel or email:
 ### Contact
 
 - Nikol Valentinova Dimitrova: [Skillo Student Email](mailto:nikolvd3@abv.bg)
-- Project Link: [GitHub - TAF Selenium 4 TestNG 7](https://github.com/Nvdimitrova/SKILLO_AT_16_TAF)
+- Project Link: [GitHub - TAF Selenium 4 TestNG 7](https://github.com/Nvdimitrova/SKILLO_16_TAF)

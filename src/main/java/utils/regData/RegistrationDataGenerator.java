@@ -14,10 +14,6 @@ public class RegistrationDataGenerator {
         return new SimpleDateFormat("hhmmssSSS").format(new Date()) + "@abv.bg";
     }
 
-    public static String createInvalidEmail() {
-        return new SimpleDateFormat("hhmmssSSS").format(new Date()) + "!";
-    }
-
     public static String createPassword() {
         return new SimpleDateFormat("hhmmssSSS").format(new Date())
                 + (char) ('A' + new Random().nextInt(26))

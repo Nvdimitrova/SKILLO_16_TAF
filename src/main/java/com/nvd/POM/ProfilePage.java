@@ -107,32 +107,6 @@ public class ProfilePage extends BasePage {
         return isDeletedMessageVisible;
     }
 
-    public boolean isLikeMessageVisible() {
-        boolean isLikeMessageVisible = false;
-        try {
-            isLikeMessageVisible = wait.until(ExpectedConditions.visibilityOf(postLikeMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post liked message is displayed.");
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The Post liked message is not displayed!");
-            isLikeMessageVisible = false;
-        }
-        return isLikeMessageVisible;
-    }
-
-    public boolean isDislikeMessageVisible() {
-        boolean isDislikeMessageVisible = false;
-        try {
-            isDislikeMessageVisible = wait.until(ExpectedConditions.visibilityOf(postDislikeMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post disliked message is displayed.");
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The Post disliked message is not displayed!");
-            isDislikeMessageVisible = false;
-        }
-        return isDislikeMessageVisible;
-    }
-
     public boolean isProfileImageVisible() {
         boolean isVisible = false;
         try {

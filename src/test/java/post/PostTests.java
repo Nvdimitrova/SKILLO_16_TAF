@@ -269,7 +269,7 @@ public class PostTests extends BaseTest {
                 "'Are you sure?' - Yes button is not visible!");
 
         log.info("STEP 12.1: Verify 'Are you sure?' - Yes button is clickable.");
-        boolean isAreYouSureYesButtonClickable = profilePage.isAreYouSureYesButtonShown();
+        boolean isAreYouSureYesButtonClickable = profilePage.isAreYouSureYesButtonClickable();
         Assert.assertTrue(isAreYouSureYesButtonClickable,
                 "'Are you sure?' - Yes button is not clickable!");
 

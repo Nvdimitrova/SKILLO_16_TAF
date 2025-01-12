@@ -20,6 +20,7 @@ public class RegistrationHappyPathTest extends BaseTest {
     private static final String BIRTHDATE = "07012000";
     private static final String PUBLIC_INFO = "Testing registration with valid credentials";
     private static final String SUCCESSFUL_REGISTRATION_MESSAGE = "Successful register!";
+    private static final String SUCCESSFUL_SIGN_OUT_MESSAGE = "Successful logout!";
 
     @Test
     public void verifySuccessfulRegistrationWithValidCredentials() {
@@ -117,6 +118,11 @@ public class RegistrationHappyPathTest extends BaseTest {
 
         log.info("STEP 11.2: Click the Sign out button.");
         homePage.clickOnNavBarSignOutButton();
+
+        log.info("STEP 11.3: Verify successful Sign out message.");
+        String actualLogOutActionMessage = loginPage.getSignOutActionMessageText();
+        Assert.assertEquals(actualLogOutActionMessage, SUCCESSFUL_SIGN_OUT_MESSAGE,
+                "Successful Sign out message is incorrect!");
 
         log.info("STEP 12: Verify user is redirected back to Login Page.");
         boolean isUserRedirectedToSignInPage = loginPage.isURLLoaded(LOGIN_PAGE_PATH);

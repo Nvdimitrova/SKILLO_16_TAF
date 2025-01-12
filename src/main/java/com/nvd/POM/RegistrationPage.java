@@ -35,7 +35,6 @@ public class RegistrationPage extends BasePage {
     @FindBy(css = ".toast-message.ng-star-inserted")
     private WebElement toastMessage;
 
-
     public RegistrationPage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
