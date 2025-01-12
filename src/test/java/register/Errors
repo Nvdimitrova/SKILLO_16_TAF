@@ -1,6 +1,0 @@
-1. Placeholder for 'email' should be capitalized
-2. Placeholder for 'Public info' --> info should be capitalized
-3. User can register with strange birthdate
-4. There is no 'invalid feedback' below birthdate, confirm password and public info, but they are required
-5. Button text should be 'Sign up'
-6. After registration user is directly logged in
