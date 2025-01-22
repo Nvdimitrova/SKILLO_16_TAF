@@ -27,9 +27,11 @@ public class PostModal extends BasePage {
 
     public boolean isImageShown() {
         try {
-            return wait.until(ExpectedConditions.visibilityOf(postModalImage)).isDisplayed();
+            boolean isVisible = wait.until(ExpectedConditions.visibilityOf(postModalImage)).isDisplayed();
+            log.info("CONFIRM # The image is visible.");
+            return isVisible;
         } catch (NoSuchElementException e) {
-            e.printStackTrace();
+            log.error("ERROR : The image is not visible.");
             return false;
         }
     }

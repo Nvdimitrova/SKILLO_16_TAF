@@ -2,6 +2,7 @@ package com.nvd.POM;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,9 +71,12 @@ public class PostPage extends BasePage {
         try {
             isVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
             log.info("CONFIRM # The file is visible.");
+        } catch (TimeoutException e) {
+            log.error("ERROR : Timeout occurred while waiting for the file to become visible.");
+            isVisible = false;
         } catch (NoSuchElementException e) {
             e.printStackTrace();
-            log.error("ERROR : The file is not visible");
+            log.error("ERROR : The file is not visible because it does not exist in the DOM.");
             isVisible = false;
         }
         return isVisible;
