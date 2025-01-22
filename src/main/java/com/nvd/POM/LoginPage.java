@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
-    final String LOGIN_PAGE_PATH = "/users/login";
+    private final String LOGIN_PAGE_PATH = "/users/login";
 
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
@@ -125,12 +125,12 @@ public class LoginPage extends BasePage {
         return isElementClickable(rememberMeCheckBox);
     }
 
-    public String verifyUsernameInputFieldPlaceholder() {
+    public String getUsernameInputFieldPlaceholder() {
         String actualUsernamePlaceholder = getAttributeValue(usernameInputField, "placeholder");
         return actualUsernamePlaceholder;
     }
 
-    public String verifyPasswordInputFieldPlaceholder() {
+    public String getPasswordInputFieldPlaceholder() {
         String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
         return actualPasswordPlaceholder;
     }

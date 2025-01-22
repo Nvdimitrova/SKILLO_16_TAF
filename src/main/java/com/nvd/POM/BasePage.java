@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-    final String BASE_URL = "http://training.skillo-bg.com:4300";
+    private final String BASE_URL = "http://training.skillo-bg.com:4300";
 
     WebDriver driver;
     WebDriverWait wait;

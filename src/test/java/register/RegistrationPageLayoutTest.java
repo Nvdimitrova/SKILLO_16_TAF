@@ -77,32 +77,32 @@ public class RegistrationPageLayoutTest extends BaseTest {
                 "Registration form header title is incorrect.");
 
         log.info("STEP 7: Verify the placeholder for Username input field.");
-        String actualUsernamePlaceholder = registrationPage.verifyUsernameInputFieldPlaceholder();
+        String actualUsernamePlaceholder = registrationPage.getUsernameInputFieldPlaceholder();
         Assert.assertEquals(actualUsernamePlaceholder, USERNAME_PLACEHOLDER,
                 "Username input field placeholder text does not match.");
 
         log.info("STEP 8: Verify the placeholder for Email input field.");
-        String actualEmailPlaceholder = registrationPage.verifyEmailInputFieldPlaceholder();
+        String actualEmailPlaceholder = registrationPage.getEmailInputFieldPlaceholder();
         Assert.assertEquals(actualEmailPlaceholder, EMAIL_PLACEHOLDER,
                 "Email input field placeholder text does not match.");
 
         log.info("STEP 9: Verify the placeholder for Birthdate input field");
-        String actualBirthdatePlaceholder = registrationPage.verifyBirthdateInputFieldPlaceholder();
+        String actualBirthdatePlaceholder = registrationPage.getBirthdateInputFieldPlaceholder();
         Assert.assertEquals(actualBirthdatePlaceholder, BIRTHDATE_PLACEHOLDER,
                 "Birthdate input field placeholder text does not match.");
 
         log.info("STEP 10: Verify the placeholder for Password input field.");
-        String actualPasswordPlaceholder = registrationPage.verifyPasswordInputFieldPlaceholder();
+        String actualPasswordPlaceholder = registrationPage.getPasswordInputFieldPlaceholder();
         Assert.assertEquals(actualPasswordPlaceholder, PASSWORD_PLACEHOLDER,
                 "Password input field placeholder text does not match.");
 
         log.info("STEP 11: Verify the placeholder for Confirm Password input field.");
-        String actualConfirmPasswordPlaceholder = registrationPage.verifyConfirmPasswordInputFieldPlaceholder();
+        String actualConfirmPasswordPlaceholder = registrationPage.getConfirmPasswordInputFieldPlaceholder();
         Assert.assertEquals(actualConfirmPasswordPlaceholder, CONFIRM_PASSWORD_PLACEHOLDER,
                 "Confirm Password input field placeholder text does not match.");
 
         log.info("STEP 12: Verify the placeholder for Public Info input field.");
-        String actualPublicInfoPlaceholder = registrationPage.verifyPublicInfoInputFieldPlaceholder();
+        String actualPublicInfoPlaceholder = registrationPage.getPublicInfoInputFieldPlaceholder();
         Assert.assertEquals(actualPublicInfoPlaceholder, PUBLIC_INFO_PLACEHOLDER,
                 "Public Info input field placeholder text does not match.");
 

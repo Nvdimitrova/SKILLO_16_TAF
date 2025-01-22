@@ -91,7 +91,7 @@ public class VerifyUserCanRegisterLoginUpdateProfilePost extends BaseTest {
                 "Registration form submit button is not visible!");
 
         log.info("STEP 6: Complete the registration form with valid user credentials.");
-        registrationPage.provideUserCredentials(USERNAME, EMAIL, BIRTHDATE, PASSWORD, PASSWORD, PUBLIC_INFO);
+        registrationPage.provideRegistrationFormData(USERNAME, EMAIL, BIRTHDATE, PASSWORD, PASSWORD, PUBLIC_INFO);
 
         log.info("STEP 7: Verify Registration form submit button is clickable.");
         boolean isRegSubmitButtonClickable = registrationPage.isRegistrationSubmitButtonClickable();

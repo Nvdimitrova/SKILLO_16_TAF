@@ -82,7 +82,7 @@ public class RegistrationHappyPathTest extends BaseTest {
                 "Registration form submit button is not visible!");
 
         log.info("STEP 6: Provide valid user credentials.");
-        registrationPage.provideUserCredentials(TEST_USERNAME, TEST_EMAIL, BIRTHDATE, TEST_PASSWORD, TEST_PASSWORD, PUBLIC_INFO);
+        registrationPage.provideRegistrationFormData(TEST_USERNAME, TEST_EMAIL, BIRTHDATE, TEST_PASSWORD, TEST_PASSWORD, PUBLIC_INFO);
 
         log.info("STEP 7: Verify Registration form submit button is clickable.");
         boolean isRegSubmitButtonClickable = registrationPage.isRegistrationSubmitButtonClickable();

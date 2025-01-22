@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
-    final String PROFILE_PAGE_PATH = "/users/8864";
+    private final String PROFILE_PAGE_PATH = "/users/8864";
 
     @FindBy(css = "h2")
     private WebElement profileUsername;

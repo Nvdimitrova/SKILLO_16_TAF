@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegistrationPage extends BasePage {
-    final String REGISTRATION_PAGE_PATH = "/users/register";
+    private final String REGISTRATION_PAGE_PATH = "/users/register";
 
     @FindBy(xpath = "//h4[contains(text(),'Sign up')]")
     private WebElement registrationFormHeaderTitle;
@@ -64,7 +64,7 @@ public class RegistrationPage extends BasePage {
         waitAndTypeTextInField(publicInfoInputField, publicInfo);
     }
 
-    public void provideUserCredentials(String username, String email, String birthDate, String password, String confirmPassword, String publicInfo) {
+    public void provideRegistrationFormData(String username, String email, String birthDate, String password, String confirmPassword, String publicInfo) {
         waitAndTypeTextInField(usernameInputField, username);
         waitAndTypeTextInField(emailInputField, email);
         waitAndTypeTextInField(birthDateInputField, birthDate);
@@ -97,42 +97,42 @@ public class RegistrationPage extends BasePage {
         return actualMessageText;
     }
 
+    public String getUsernameInputFieldPlaceholder() {
+        String actualUsernamePlaceholder = getAttributeValue(usernameInputField, "placeholder");
+        return actualUsernamePlaceholder;
+    }
+
+    public String getEmailInputFieldPlaceholder() {
+        String actualEmailPlaceholder = getAttributeValue(emailInputField, "placeholder");
+        return actualEmailPlaceholder;
+    }
+
+    public String getBirthdateInputFieldPlaceholder() {
+        String actualBirthdatePlaceholder = getAttributeValue(birthDateInputField, "placeholder");
+        return actualBirthdatePlaceholder;
+    }
+
+    public String getPasswordInputFieldPlaceholder() {
+        String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
+        return actualPasswordPlaceholder;
+    }
+
+    public String getConfirmPasswordInputFieldPlaceholder() {
+        String actualConfirmPasswordPlaceholder = getAttributeValue(confirmPasswordInputField, "placeholder");
+        return actualConfirmPasswordPlaceholder;
+    }
+
+    public String getPublicInfoInputFieldPlaceholder() {
+        String actualPublicInfoPlaceholder = getAttributeValue(publicInfoInputField, "placeholder");
+        return actualPublicInfoPlaceholder;
+    }
+
     public boolean isRegistrationSubmitButtonShown() {
         return isElementPresent(registrationSubmitButton);
     }
 
     public boolean isRegistrationSubmitButtonClickable() {
         return isElementClickable(registrationSubmitButton);
-    }
-
-    public String verifyUsernameInputFieldPlaceholder() {
-        String actualUsernamePlaceholder = getAttributeValue(usernameInputField, "placeholder");
-        return actualUsernamePlaceholder;
-    }
-
-    public String verifyEmailInputFieldPlaceholder() {
-        String actualEmailPlaceholder = getAttributeValue(emailInputField, "placeholder");
-        return actualEmailPlaceholder;
-    }
-
-    public String verifyBirthdateInputFieldPlaceholder() {
-        String actualBirthdatePlaceholder = getAttributeValue(birthDateInputField, "placeholder");
-        return actualBirthdatePlaceholder;
-    }
-
-    public String verifyPasswordInputFieldPlaceholder() {
-        String actualPasswordPlaceholder = getAttributeValue(passwordInputField, "placeholder");
-        return actualPasswordPlaceholder;
-    }
-
-    public String verifyConfirmPasswordInputFieldPlaceholder() {
-        String actualConfirmPasswordPlaceholder = getAttributeValue(confirmPasswordInputField, "placeholder");
-        return actualConfirmPasswordPlaceholder;
-    }
-
-    public String verifyPublicInfoInputFieldPlaceholder() {
-        String actualPublicInfoPlaceholder = getAttributeValue(publicInfoInputField, "placeholder");
-        return actualPublicInfoPlaceholder;
     }
 
     public void verifyFieldsInvalidFeedback() {

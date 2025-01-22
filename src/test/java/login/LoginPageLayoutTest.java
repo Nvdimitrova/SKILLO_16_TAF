@@ -52,12 +52,12 @@ public class LoginPageLayoutTest extends BaseTest {
                 "Login form header title is incorrect.");
 
         log.info("STEP 4: Verify the placeholder text for username input field.");
-        String actualUsernamePlaceholder = loginPage.verifyUsernameInputFieldPlaceholder();
+        String actualUsernamePlaceholder = loginPage.getUsernameInputFieldPlaceholder();
         Assert.assertEquals(actualUsernamePlaceholder, USERNAME_PLACEHOLDER,
                 "Username input field placeholder text is incorrect.");
 
         log.info("STEP 5: Verify the placeholder text for password input field.");
-        String actualPasswordPlaceholder = loginPage.verifyPasswordInputFieldPlaceholder();
+        String actualPasswordPlaceholder = loginPage.getPasswordInputFieldPlaceholder();
         Assert.assertEquals(actualPasswordPlaceholder, PASSWORD_PLACEHOLDER,
                 "Password input field placeholder text is incorrect.");
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage {
-    final String HOME_PAGE_PATH = "/posts/all";
+    private final String HOME_PAGE_PATH = "/posts/all";
 
     @FindBy(id = "homeIcon")
     private WebElement headerHomeIcon;

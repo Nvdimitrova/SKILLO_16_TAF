@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 
 public class PostPage extends BasePage {
-    final String POST_PAGE_PATH = "/posts/create";
+    private final String POST_PAGE_PATH = "/posts/create";
 
     @FindBy(css = "h3.text-center")
     private WebElement postImageHeaderText;
