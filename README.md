@@ -5,22 +5,23 @@
 
 <div align="center">
 
-# Test automation framework
+# Test Automation Framework
 
 </div>
 
-## Automating ISkillo website
+## Automating ISkillo Website
 
 ---
 
 ### Table of Contents
 
 - [Overview](#overview)
-- [Application / software under test](#application--software-under-test)
-- [Test activities performed](#test-activities-performed-with-selenium-425-and-testng-10-java-unit-framework)
+- [Application Under Test](#application-under-test)
+- [Test Activities Performed](#test-activities-performed-with-selenium-425-and-testng-10-java-unit-framework)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Bug report](#bug-report)
+- [Observed Issues and Suggestions](#observed-issues-and-suggestions)
+- [Bug Reporting](#bug-reporting)
 - [Contact](#contact)
 
 ---
@@ -36,10 +37,9 @@ interactions.
 
 Additionally, **ISkillo** serves as a hub for QA engineers, offering a dynamic environment for a wide range of test
 automation activities, making it an invaluable resource for software testing and quality assurance.
-
 ---
 
-### Application / software under test:
+### Application Under Test
 
 **ISkillo** Training Platform
 
@@ -49,31 +49,31 @@ automation activities, making it an invaluable resource for software testing and
 
 ### Test Activities Performed with Selenium 4.25 and TestNG 10 (Java Unit Framework):
 
-**Registration Feature**
+**Registration**
 
 - Verify that a user can register in the system with valid data.
 - Verify that a user cannot register in the system with a *taken* email.
 - Verify that a user cannot register in the system with a *taken* username.
 
-**Login Feature**
+**Login**
 
 - Verify that an already registered user can successfully log in to the system with valid credentials.
 - Verify that an already registered user cannot log in to the system with an *incorrect* username.
 - Verify that an already registered user cannot log in to the system with an *incorrect* password.
 - Verify that an already registered user cannot log in to the system without providing any credentials.
 
-**Post Feature**
+**Post**
 
 - Verify that a user can create a new post.
 - Verify that a user can delete a post.
 
-**Profile Feature**
+**Profile**
 
 - Verify that a user can upload a profile picture.
 
-**End-to-End Scenario**
+**End-to-End Flow**
 
-- Verify the full flow of user interaction: Registration → Login → Profile → Post.
+- Validate the full flow of user interaction: Registration → Login → Profile → Post.
 
 ---
 
@@ -147,7 +147,7 @@ Wait a bit for the tests to execute. A detailed report will be generated post-ex
 
 ---
 
-### Observed Issues and Suggestions for Improvement
+### Observed Issues and Suggestions
 
 **Login Page**
 
@@ -188,7 +188,7 @@ Wait a bit for the tests to execute. A detailed report will be generated post-ex
 
 ---
 
-### Bug report
+### Bug Reporting
 
 If you encounter any bugs that you'd like to report, please provide the following details, through the designated
 channel or email:
