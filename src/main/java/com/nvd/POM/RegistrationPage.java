@@ -135,7 +135,7 @@ public class RegistrationPage extends BasePage {
         return isElementClickable(registrationSubmitButton);
     }
 
-    public void verifyFieldsInvalidFeedback() {
+    public List<String> verifyFieldsInvalidFeedback() {
         List<WebElement> fields = driver.findElements(By.cssSelector("input, textarea"));
         List<String> errors = new ArrayList<>();
 
@@ -155,9 +155,6 @@ public class RegistrationPage extends BasePage {
                 errors.add(errorMessage);
             }
         }
-
-        if (!errors.isEmpty()) {
-            Assert.fail("The following validation errors were found:\n" + String.join("\n", errors));
-        }
+        return errors;
     }
 }

@@ -7,6 +7,8 @@ import com.nvd.POM.RegistrationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class RegistrationPageLayoutTest extends BaseTest {
     private static final String HOME_PAGE_PATH = "/posts/all";
     private static final String LOGIN_PAGE_PATH = "/users/login";
@@ -122,7 +124,10 @@ public class RegistrationPageLayoutTest extends BaseTest {
                 "Registration submit button text is incorrect.");
 
         log.info("STEP 14: Verify that invalid feedback message is shown for the fields with missing required information.");
-        registrationPage.verifyFieldsInvalidFeedback();
+        List<String> errors = registrationPage.verifyFieldsInvalidFeedback();
+        if (!errors.isEmpty()) {
+            Assert.fail("The following validation errors were found:\n" + String.join("\n", errors));
+        }
 
         log.info("STEP 14.1: Verify invalid feedback message text.");
         String actualInvalidFeedbackMessageText = registrationPage.getInvalidFeedbackMessageText();
